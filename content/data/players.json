@@ -1,0 +1,1148 @@
+{
+  "updated": "2026-07-15",
+  "source": "matrika SŠZ (chess.sk)",
+  "club": "ŠK Slovan Bratislava",
+  "players": [
+    {
+      "name": "Sebastián Lukáš Kostolanský",
+      "title": "IM",
+      "elo": 2425,
+      "fideId": "14950596",
+      "sszId": "8344"
+    },
+    {
+      "name": "Ľubomír Ftáčnik",
+      "title": "GM",
+      "elo": 2408,
+      "fideId": "14900017",
+      "sszId": "2869"
+    },
+    {
+      "name": "Juraj Oružinský",
+      "title": "FM",
+      "elo": 2329,
+      "fideId": "14962195",
+      "sszId": "9510"
+    },
+    {
+      "name": "Mikuláš Maník",
+      "title": "GM",
+      "elo": 2270,
+      "fideId": "14900734",
+      "sszId": "3548"
+    },
+    {
+      "name": "Rastislav Briestenský",
+      "title": "FM",
+      "elo": 2244,
+      "fideId": "14900394",
+      "sszId": "272"
+    },
+    {
+      "name": "Libor Havlíček",
+      "title": null,
+      "elo": 2233,
+      "fideId": "14903679",
+      "sszId": "116"
+    },
+    {
+      "name": "Claudiu Andrei Zetocha",
+      "title": "FM",
+      "elo": 2229,
+      "fideId": "14906570",
+      "sszId": "3544"
+    },
+    {
+      "name": "Mário Castiglione",
+      "title": null,
+      "elo": 2228,
+      "fideId": "14901641",
+      "sszId": "103"
+    },
+    {
+      "name": "Peter Petrán",
+      "title": "IM",
+      "elo": 2181,
+      "fideId": "14900114",
+      "sszId": "3545"
+    },
+    {
+      "name": "Adrian Zetocha",
+      "title": "FM",
+      "elo": 2181,
+      "fideId": "14950430",
+      "sszId": "8058"
+    },
+    {
+      "name": "Arsenii Iankin",
+      "title": null,
+      "elo": 2163,
+      "fideId": "24224073",
+      "sszId": "12751"
+    },
+    {
+      "name": "Ondrej Vadila",
+      "title": null,
+      "elo": 2159,
+      "fideId": "14944642",
+      "sszId": "7597"
+    },
+    {
+      "name": "Štefan Turňa",
+      "title": null,
+      "elo": 2157,
+      "fideId": "14903229",
+      "sszId": "2747"
+    },
+    {
+      "name": "Daniel Chlpek",
+      "title": null,
+      "elo": 2144,
+      "fideId": "14940698",
+      "sszId": "7077"
+    },
+    {
+      "name": "Serhii Bilokha",
+      "title": null,
+      "elo": 2115,
+      "fideId": "14106442",
+      "sszId": "13572"
+    },
+    {
+      "name": "Igor Travěnec",
+      "title": null,
+      "elo": 2115,
+      "fideId": "14900700",
+      "sszId": "152"
+    },
+    {
+      "name": "Radomír Háčik",
+      "title": null,
+      "elo": 2110,
+      "fideId": "14901463",
+      "sszId": "113"
+    },
+    {
+      "name": "Ivan Valent",
+      "title": null,
+      "elo": 2110,
+      "fideId": "14901749",
+      "sszId": "154"
+    },
+    {
+      "name": "Karol Rückschloss",
+      "title": "FM",
+      "elo": 2100,
+      "fideId": "14900386",
+      "sszId": "143"
+    },
+    {
+      "name": "Dmytro Nestorenko",
+      "title": null,
+      "elo": 2092,
+      "fideId": "14129728",
+      "sszId": "10199"
+    },
+    {
+      "name": "Igor Prívara",
+      "title": null,
+      "elo": 2073,
+      "fideId": "14901340",
+      "sszId": "159"
+    },
+    {
+      "name": "Michal Ač",
+      "title": null,
+      "elo": 2038,
+      "fideId": "14900319",
+      "sszId": "94"
+    },
+    {
+      "name": "Marek Kolčák",
+      "title": "FM",
+      "elo": 2024,
+      "fideId": "14900220",
+      "sszId": "124"
+    },
+    {
+      "name": "Matúš Kapinaj",
+      "title": null,
+      "elo": 2003,
+      "fideId": "14980703",
+      "sszId": "11374"
+    },
+    {
+      "name": "Michal Damek",
+      "title": null,
+      "elo": 1998,
+      "fideId": "14939797",
+      "sszId": "6502"
+    },
+    {
+      "name": "Vladimír Cambel",
+      "title": null,
+      "elo": 1996,
+      "fideId": "14908930",
+      "sszId": "102"
+    },
+    {
+      "name": "Lukáš Eremiáš",
+      "title": null,
+      "elo": 1986,
+      "fideId": "14914514",
+      "sszId": "4026"
+    },
+    {
+      "name": "Marek Škrinár",
+      "title": null,
+      "elo": 1984,
+      "fideId": "14940710",
+      "sszId": "7029"
+    },
+    {
+      "name": "Boris Djubek",
+      "title": null,
+      "elo": 1975,
+      "fideId": "14900203",
+      "sszId": "105"
+    },
+    {
+      "name": "Tomáš Hecht",
+      "title": null,
+      "elo": 1958,
+      "fideId": "14908638",
+      "sszId": "2032"
+    },
+    {
+      "name": "Ján Hudec",
+      "title": null,
+      "elo": 1949,
+      "fideId": "14902079",
+      "sszId": "120"
+    },
+    {
+      "name": "Richard Kolman",
+      "title": null,
+      "elo": 1946,
+      "fideId": "14904993",
+      "sszId": "2033"
+    },
+    {
+      "name": "Ján Šturc",
+      "title": null,
+      "elo": 1937,
+      "fideId": "14922819",
+      "sszId": "4204"
+    },
+    {
+      "name": "Vlastimil Iša",
+      "title": null,
+      "elo": 1932,
+      "fideId": "14906015",
+      "sszId": "121"
+    },
+    {
+      "name": "Michal Vimmer",
+      "title": null,
+      "elo": 1918,
+      "fideId": "14908484",
+      "sszId": "2796"
+    },
+    {
+      "name": "Tomáš Harvan",
+      "title": null,
+      "elo": 1914,
+      "fideId": "14944405",
+      "sszId": "6291"
+    },
+    {
+      "name": "Mladen Šipka",
+      "title": null,
+      "elo": 1914,
+      "fideId": "911976",
+      "sszId": "13442"
+    },
+    {
+      "name": "Stanislav Breja",
+      "title": null,
+      "elo": 1911,
+      "fideId": "14900718",
+      "sszId": "98"
+    },
+    {
+      "name": "Michal Kopčok",
+      "title": null,
+      "elo": 1911,
+      "fideId": "14911817",
+      "sszId": "2669"
+    },
+    {
+      "name": "Vladimír Kuňa",
+      "title": null,
+      "elo": 1909,
+      "fideId": "14906180",
+      "sszId": "2029"
+    },
+    {
+      "name": "Samuel Gič",
+      "title": null,
+      "elo": 1907,
+      "fideId": "73601551",
+      "sszId": "6636"
+    },
+    {
+      "name": "Radovan Vachálek",
+      "title": null,
+      "elo": 1886,
+      "fideId": "14971950",
+      "sszId": "10559"
+    },
+    {
+      "name": "Hana Horváthová",
+      "title": null,
+      "elo": 1883,
+      "fideId": "14951959",
+      "sszId": "8588"
+    },
+    {
+      "name": "Dávid Osvald",
+      "title": null,
+      "elo": 1875,
+      "fideId": "14974398",
+      "sszId": "10751"
+    },
+    {
+      "name": "Peter Kráľovič",
+      "title": null,
+      "elo": 1868,
+      "fideId": "14953226",
+      "sszId": "8345"
+    },
+    {
+      "name": "Olga Chizha",
+      "title": null,
+      "elo": 1866,
+      "fideId": "24143243",
+      "sszId": "14065"
+    },
+    {
+      "name": "Timotej Hudec",
+      "title": null,
+      "elo": 1854,
+      "fideId": "14932750",
+      "sszId": "5987"
+    },
+    {
+      "name": "Oleksandr Pushkov",
+      "title": null,
+      "elo": 1847,
+      "fideId": "34183434",
+      "sszId": "13855"
+    },
+    {
+      "name": "Ladislav Červenák",
+      "title": null,
+      "elo": 1839,
+      "fideId": "14950308",
+      "sszId": "8107"
+    },
+    {
+      "name": "Pavol Kostka",
+      "title": null,
+      "elo": 1839,
+      "fideId": "14970112",
+      "sszId": "10426"
+    },
+    {
+      "name": "Zsolt Takács",
+      "title": null,
+      "elo": 1835,
+      "fideId": "14932326",
+      "sszId": "1754"
+    },
+    {
+      "name": "Alfréd Dvořák",
+      "title": null,
+      "elo": 1831,
+      "fideId": "14968541",
+      "sszId": "10298"
+    },
+    {
+      "name": "Jaroslav Novák",
+      "title": null,
+      "elo": 1823,
+      "fideId": "14958139",
+      "sszId": "8927"
+    },
+    {
+      "name": "Timur Kuzma",
+      "title": null,
+      "elo": 1820,
+      "fideId": "549000837",
+      "sszId": "13402"
+    },
+    {
+      "name": "Chance Timothy Ruggiero",
+      "title": null,
+      "elo": 1817,
+      "fideId": "14989301",
+      "sszId": "12239"
+    },
+    {
+      "name": "Ľubomír Munk",
+      "title": null,
+      "elo": 1797,
+      "fideId": "14903806",
+      "sszId": "135"
+    },
+    {
+      "name": "Radovan Heldák",
+      "title": null,
+      "elo": 1793,
+      "fideId": "14976820",
+      "sszId": "10996"
+    },
+    {
+      "name": "Richard Hanzel",
+      "title": null,
+      "elo": 1787,
+      "fideId": "14984741",
+      "sszId": "11782"
+    },
+    {
+      "name": "Miro Sýkora",
+      "title": null,
+      "elo": 1785,
+      "fideId": "14985055",
+      "sszId": "11808"
+    },
+    {
+      "name": "Štefan Khandl",
+      "title": null,
+      "elo": 1782,
+      "fideId": "14908999",
+      "sszId": "1233"
+    },
+    {
+      "name": "Štefan Kovačič",
+      "title": null,
+      "elo": 1782,
+      "fideId": "14913720",
+      "sszId": "125"
+    },
+    {
+      "name": "Gustav Šturc",
+      "title": null,
+      "elo": 1774,
+      "fideId": "14902303",
+      "sszId": "150"
+    },
+    {
+      "name": "Dušan Duchovič",
+      "title": null,
+      "elo": 1766,
+      "fideId": "14961369",
+      "sszId": "9429"
+    },
+    {
+      "name": "Bedřich Veselý",
+      "title": null,
+      "elo": 1760,
+      "fideId": "14936186",
+      "sszId": "3996"
+    },
+    {
+      "name": "Adela Zetocha",
+      "title": null,
+      "elo": 1753,
+      "fideId": "14951681",
+      "sszId": "8476"
+    },
+    {
+      "name": "Michal Hozlár",
+      "title": null,
+      "elo": 1747,
+      "fideId": "14977516",
+      "sszId": "11070"
+    },
+    {
+      "name": "Jozef Antal",
+      "title": null,
+      "elo": 1735,
+      "fideId": "14913585",
+      "sszId": "95"
+    },
+    {
+      "name": "Marek Nedeljak",
+      "title": null,
+      "elo": 1724,
+      "fideId": "14983753",
+      "sszId": "11683"
+    },
+    {
+      "name": "Anna Goncharenko",
+      "title": null,
+      "elo": 1719,
+      "fideId": "14977281",
+      "sszId": "11045"
+    },
+    {
+      "name": "Zita Beňová",
+      "title": null,
+      "elo": 1714,
+      "fideId": "14906686",
+      "sszId": "97"
+    },
+    {
+      "name": "Jakub Artner",
+      "title": null,
+      "elo": 1712,
+      "fideId": "14989255",
+      "sszId": "12237"
+    },
+    {
+      "name": "Šimon Vančo",
+      "title": null,
+      "elo": 1704,
+      "fideId": "14987872",
+      "sszId": "12092"
+    },
+    {
+      "name": "Adam Iša",
+      "title": null,
+      "elo": 1699,
+      "fideId": "14974630",
+      "sszId": "10782"
+    },
+    {
+      "name": "Ladislav Zentko",
+      "title": null,
+      "elo": 1689,
+      "fideId": "14906651",
+      "sszId": "3450"
+    },
+    {
+      "name": "Vladimír Škerlik",
+      "title": null,
+      "elo": 1666,
+      "fideId": "14969971",
+      "sszId": "10427"
+    },
+    {
+      "name": "Matej Šolc",
+      "title": null,
+      "elo": 1666,
+      "fideId": "549001108",
+      "sszId": "13427"
+    },
+    {
+      "name": "Michal Fabrici",
+      "title": null,
+      "elo": 1661,
+      "fideId": "14985144",
+      "sszId": "11825"
+    },
+    {
+      "name": "Peter Zaťko",
+      "title": null,
+      "elo": 1658,
+      "fideId": "14966409",
+      "sszId": "9951"
+    },
+    {
+      "name": "Adam Pekár",
+      "title": null,
+      "elo": 1645,
+      "fideId": "14985470",
+      "sszId": "11848"
+    },
+    {
+      "name": "Tomáš Beňuška",
+      "title": null,
+      "elo": 1639,
+      "fideId": "549004077",
+      "sszId": "13730"
+    },
+    {
+      "name": "Linda Podolinská",
+      "title": null,
+      "elo": 1638,
+      "fideId": "14989611",
+      "sszId": "12265"
+    },
+    {
+      "name": "Ivan Willmann",
+      "title": null,
+      "elo": 1624,
+      "fideId": "14984849",
+      "sszId": "11794"
+    },
+    {
+      "name": "Zuzana Kovárová",
+      "title": null,
+      "elo": 1622,
+      "fideId": "14985179",
+      "sszId": "11819"
+    },
+    {
+      "name": "Matúš Zavarský",
+      "title": null,
+      "elo": 1619,
+      "fideId": "14998971",
+      "sszId": "13215"
+    },
+    {
+      "name": "Daniel Požár",
+      "title": null,
+      "elo": 1615,
+      "fideId": "14901870",
+      "sszId": "4404"
+    },
+    {
+      "name": "Pavol Greppel",
+      "title": null,
+      "elo": 1605,
+      "fideId": "14935848",
+      "sszId": "112"
+    },
+    {
+      "name": "Dávid Siviček",
+      "title": null,
+      "elo": 1601,
+      "fideId": "14997258",
+      "sszId": "13042"
+    },
+    {
+      "name": "Pavel Eiben",
+      "title": null,
+      "elo": 1598,
+      "fideId": "14958694",
+      "sszId": "1514"
+    },
+    {
+      "name": "Miroslav Petrek",
+      "title": null,
+      "elo": 1594,
+      "fideId": "14949040",
+      "sszId": "8278"
+    },
+    {
+      "name": "Davide Camilleri",
+      "title": null,
+      "elo": 1591,
+      "fideId": "14985004",
+      "sszId": "11807"
+    },
+    {
+      "name": "Arthur Sredau",
+      "title": null,
+      "elo": 1585,
+      "fideId": "14997266",
+      "sszId": "13045"
+    },
+    {
+      "name": "Dominik Hrušecký",
+      "title": null,
+      "elo": 1582,
+      "fideId": "14997304",
+      "sszId": "13054"
+    },
+    {
+      "name": "Tomáš Hilčík",
+      "title": null,
+      "elo": 1581,
+      "fideId": "14999170",
+      "sszId": "13239"
+    },
+    {
+      "name": "Matúš Plaštiak",
+      "title": null,
+      "elo": 1581,
+      "fideId": "14994895",
+      "sszId": "12808"
+    },
+    {
+      "name": "Igor Demovič",
+      "title": null,
+      "elo": 1578,
+      "fideId": "14978750",
+      "sszId": "11187"
+    },
+    {
+      "name": "Jakub Malaník",
+      "title": null,
+      "elo": 1577,
+      "fideId": "14994240",
+      "sszId": "12739"
+    },
+    {
+      "name": "Henry Gallagher",
+      "title": null,
+      "elo": 1572,
+      "fideId": "549001396",
+      "sszId": "13461"
+    },
+    {
+      "name": "Peter Heger",
+      "title": null,
+      "elo": 1572,
+      "fideId": "14944928",
+      "sszId": "7818"
+    },
+    {
+      "name": "Adriana Šefcová",
+      "title": null,
+      "elo": 1561,
+      "fideId": "14984172",
+      "sszId": "11721"
+    },
+    {
+      "name": "Sofia Šolonyová",
+      "title": null,
+      "elo": 1557,
+      "fideId": "14987570",
+      "sszId": "12062"
+    },
+    {
+      "name": "Teo Trávniček",
+      "title": null,
+      "elo": 1555,
+      "fideId": "14983842",
+      "sszId": "11691"
+    },
+    {
+      "name": "Martin Macek",
+      "title": null,
+      "elo": 1550,
+      "fideId": "14983826",
+      "sszId": "11690"
+    },
+    {
+      "name": "Marián Horváth",
+      "title": null,
+      "elo": 1546,
+      "fideId": "14950340",
+      "sszId": "8111"
+    },
+    {
+      "name": "Vladimír Kostelka",
+      "title": null,
+      "elo": 1546,
+      "fideId": "14981793",
+      "sszId": "11486"
+    },
+    {
+      "name": "Michal Vatrál",
+      "title": null,
+      "elo": 1545,
+      "fideId": "14989310",
+      "sszId": "12238"
+    },
+    {
+      "name": "Jakub Oršula",
+      "title": null,
+      "elo": 1542,
+      "fideId": "549003852",
+      "sszId": "13706"
+    },
+    {
+      "name": "Peter Filípek",
+      "title": null,
+      "elo": 1538,
+      "fideId": "14953340",
+      "sszId": "8632"
+    },
+    {
+      "name": "Naďa Janíčková",
+      "title": null,
+      "elo": 1538,
+      "fideId": "549001124",
+      "sszId": "13430"
+    },
+    {
+      "name": "Filip Dancák",
+      "title": null,
+      "elo": 1531,
+      "fideId": "549000454",
+      "sszId": "13368"
+    },
+    {
+      "name": "Timotej Rummel",
+      "title": null,
+      "elo": 1531,
+      "fideId": "549001370",
+      "sszId": "13457"
+    },
+    {
+      "name": "Samuel Ungvarský",
+      "title": null,
+      "elo": 1525,
+      "fideId": "14997550",
+      "sszId": "13066"
+    },
+    {
+      "name": "Sebastian Pearson",
+      "title": null,
+      "elo": 1521,
+      "fideId": "14983486",
+      "sszId": "11655"
+    },
+    {
+      "name": "Daniel Petrakovič",
+      "title": null,
+      "elo": 1506,
+      "fideId": "14975491",
+      "sszId": "10865"
+    },
+    {
+      "name": "Michal Šimon Hradský",
+      "title": null,
+      "elo": 1497,
+      "fideId": "14994186",
+      "sszId": "12733"
+    },
+    {
+      "name": "Filip Ronaj",
+      "title": null,
+      "elo": 1497,
+      "fideId": "14995786",
+      "sszId": "12899"
+    },
+    {
+      "name": "Andrej Bucher",
+      "title": null,
+      "elo": 1478,
+      "fideId": "14984571",
+      "sszId": "11767"
+    },
+    {
+      "name": "Marko Baráth",
+      "title": null,
+      "elo": 1470,
+      "fideId": "14988003",
+      "sszId": "12109"
+    },
+    {
+      "name": "Peter Svitek",
+      "title": null,
+      "elo": 1461,
+      "fideId": "14994909",
+      "sszId": "12809"
+    },
+    {
+      "name": "Zuzana Škerliková",
+      "title": null,
+      "elo": 1451,
+      "fideId": "14975610",
+      "sszId": "10875"
+    },
+    {
+      "name": "Adam Cadmon Tchambak",
+      "title": null,
+      "elo": 1430,
+      "fideId": "14998890",
+      "sszId": "13207"
+    },
+    {
+      "name": "Martin Kuňa",
+      "title": null,
+      "elo": 1400,
+      "fideId": "14977613",
+      "sszId": "11077"
+    },
+    {
+      "name": "Danylo Romanov",
+      "title": null,
+      "elo": 1400,
+      "fideId": "14987252",
+      "sszId": "12031"
+    },
+    {
+      "name": "Tibor Farkas",
+      "title": null,
+      "elo": 1298,
+      "fideId": "549001272",
+      "sszId": "13447"
+    },
+    {
+      "name": "Nina Hankerová",
+      "title": null,
+      "elo": 1289,
+      "fideId": "549005634",
+      "sszId": "13890"
+    },
+    {
+      "name": "Milan Izikeiev",
+      "title": null,
+      "elo": 1283,
+      "fideId": "549007076",
+      "sszId": "14034"
+    },
+    {
+      "name": "Maxim Hartl",
+      "title": null,
+      "elo": 1180,
+      "fideId": "14997223",
+      "sszId": "13046"
+    },
+    {
+      "name": "Roman Hanák",
+      "title": null,
+      "elo": 1130,
+      "fideId": "549007068",
+      "sszId": "14033"
+    },
+    {
+      "name": "Alexandra Šefcová",
+      "title": null,
+      "elo": 1098,
+      "fideId": "14998866",
+      "sszId": "13202"
+    },
+    {
+      "name": "Dominik Šatka",
+      "title": null,
+      "elo": 1070,
+      "fideId": "14997240",
+      "sszId": "13044"
+    },
+    {
+      "name": "Ruslan Behun",
+      "title": null,
+      "elo": 1000,
+      "fideId": "549005847",
+      "sszId": "13908"
+    },
+    {
+      "name": "Vitaliy Bilak",
+      "title": null,
+      "elo": 1000,
+      "fideId": "549006649",
+      "sszId": "13992"
+    },
+    {
+      "name": "Eliška Bradová",
+      "title": null,
+      "elo": 1000,
+      "fideId": "549008242",
+      "sszId": "14147"
+    },
+    {
+      "name": "Daniel Jonatan Cibulka",
+      "title": null,
+      "elo": 1000,
+      "fideId": "14993643",
+      "sszId": "12681"
+    },
+    {
+      "name": "Jaroslav Dancák",
+      "title": null,
+      "elo": 1000,
+      "fideId": "549000462",
+      "sszId": "13369"
+    },
+    {
+      "name": "Daniel Dóczy",
+      "title": null,
+      "elo": 1000,
+      "fideId": "549007394",
+      "sszId": "14066"
+    },
+    {
+      "name": "Martin Gajdoš",
+      "title": null,
+      "elo": 1000,
+      "fideId": "14993694",
+      "sszId": "12680"
+    },
+    {
+      "name": "Richard Gallagher",
+      "title": null,
+      "elo": 1000,
+      "fideId": "549001400",
+      "sszId": "13460"
+    },
+    {
+      "name": "Andrii Gladun",
+      "title": null,
+      "elo": 1000,
+      "fideId": "14997886",
+      "sszId": "13124"
+    },
+    {
+      "name": "Adam Hargaš",
+      "title": null,
+      "elo": 1000,
+      "fideId": "549001710",
+      "sszId": "13493"
+    },
+    {
+      "name": "Marek Hargaš",
+      "title": null,
+      "elo": 1000,
+      "fideId": "549002880",
+      "sszId": "13612"
+    },
+    {
+      "name": "Erik Hudák",
+      "title": null,
+      "elo": 1000,
+      "fideId": "14993716",
+      "sszId": "12679"
+    },
+    {
+      "name": "Alexandra Jurdíková",
+      "title": null,
+      "elo": 1000,
+      "fideId": "549003690",
+      "sszId": "7144"
+    },
+    {
+      "name": "Daniel Kelemen",
+      "title": null,
+      "elo": 1000,
+      "fideId": "549000799",
+      "sszId": "13398"
+    },
+    {
+      "name": "Jakub Kelemen",
+      "title": null,
+      "elo": 1000,
+      "fideId": "549000802",
+      "sszId": "13397"
+    },
+    {
+      "name": "Šimon Koššúth",
+      "title": null,
+      "elo": 1000,
+      "fideId": "549007556",
+      "sszId": "14082"
+    },
+    {
+      "name": "Martin Kováč",
+      "title": null,
+      "elo": 1000,
+      "fideId": "549006118",
+      "sszId": "13934"
+    },
+    {
+      "name": "Filip Kuľka",
+      "title": null,
+      "elo": 1000,
+      "fideId": "549007360",
+      "sszId": "14061"
+    },
+    {
+      "name": "Arsenii Leno",
+      "title": null,
+      "elo": 1000,
+      "fideId": "549007599",
+      "sszId": "14081"
+    },
+    {
+      "name": "Gabriela Maceková",
+      "title": null,
+      "elo": 1000,
+      "fideId": "549008765",
+      "sszId": "14260"
+    },
+    {
+      "name": "Dušan Majeský",
+      "title": null,
+      "elo": 1000,
+      "fideId": "14998580",
+      "sszId": "13183"
+    },
+    {
+      "name": "Ján Maruniak",
+      "title": null,
+      "elo": 1000,
+      "fideId": "0",
+      "sszId": "14285"
+    },
+    {
+      "name": "Radomír Michalov",
+      "title": null,
+      "elo": 1000,
+      "fideId": "549001140",
+      "sszId": "13431"
+    },
+    {
+      "name": "Adejo Opeoluwa",
+      "title": null,
+      "elo": 1000,
+      "fideId": "14993082",
+      "sszId": "12623"
+    },
+    {
+      "name": "Samuel Osuský",
+      "title": null,
+      "elo": 1000,
+      "fideId": "549001361",
+      "sszId": "13458"
+    },
+    {
+      "name": "David Rosík",
+      "title": null,
+      "elo": 1000,
+      "fideId": "549000896",
+      "sszId": "13407"
+    },
+    {
+      "name": "Karolína Šefcová",
+      "title": null,
+      "elo": 1000,
+      "fideId": "549005901",
+      "sszId": "13913"
+    },
+    {
+      "name": "Henrich Slezák",
+      "title": null,
+      "elo": 1000,
+      "fideId": "549007092",
+      "sszId": "14035"
+    },
+    {
+      "name": "Alica Slezáková",
+      "title": null,
+      "elo": 1000,
+      "fideId": "549007106",
+      "sszId": "14036"
+    },
+    {
+      "name": "Teodor Šveda",
+      "title": null,
+      "elo": 1000,
+      "fideId": "549003518",
+      "sszId": "13674"
+    },
+    {
+      "name": "Daniel Vadila",
+      "title": null,
+      "elo": 1000,
+      "fideId": "549006622",
+      "sszId": "13987"
+    },
+    {
+      "name": "Andrej Vašina",
+      "title": null,
+      "elo": 1000,
+      "fideId": "14998920",
+      "sszId": "13210"
+    },
+    {
+      "name": "Viktor Žiak",
+      "title": null,
+      "elo": 1000,
+      "fideId": "14997274",
+      "sszId": "13043"
+    },
+    {
+      "name": "Jozef Zvalo",
+      "title": null,
+      "elo": 1000,
+      "fideId": "549007378",
+      "sszId": "14062"
+    }
+  ]
+}

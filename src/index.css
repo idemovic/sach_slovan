@@ -1,0 +1,81 @@
+@import "@fontsource/barlow/400.css";
+@import "@fontsource/barlow/500.css";
+@import "@fontsource/barlow/600.css";
+@import "@fontsource/barlow/700.css";
+@import "@fontsource/barlow-condensed/500.css";
+@import "@fontsource/barlow-condensed/600.css";
+@import "@fontsource/barlow-condensed/700.css";
+@import "@fontsource/barlow-condensed/800.css";
+@import "tailwindcss";
+@plugin "@tailwindcss/typography";
+
+@theme {
+  --color-navy: #0b1f44;
+  --color-navy-800: #0f2a58;
+  --color-navy-900: #0a1a3a;
+  --color-blue: #0f66c2;
+  --color-blue-dark: #0a4d94;
+  --color-sky: #5ea0e8;
+  --color-sky-light: #7fb2e8;
+  --color-red: #d81f2c;
+  --color-paper: #f5f6f8;
+  --color-mist: #eef1f5;
+  --color-ink: #0e1626;
+  --font-sans: "Barlow", system-ui, sans-serif;
+  --font-condensed: "Barlow Condensed", "Barlow", sans-serif;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  @apply bg-paper text-ink font-sans antialiased;
+}
+
+::selection {
+  background: var(--color-blue);
+  color: #fff;
+}
+
+@keyframes float-in {
+  from {
+    opacity: 0;
+    transform: translateY(14px);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+.animate-float-in {
+  animation: float-in 0.7s ease both;
+}
+.animate-float-in-slow {
+  animation: float-in 0.9s ease both;
+}
+
+/* velky sachovnicovy raster v hero pozadi */
+.chess-pattern {
+  background-image:
+    linear-gradient(45deg, #fff 25%, transparent 25%, transparent 75%, #fff 75%),
+    linear-gradient(45deg, #fff 25%, transparent 25%, transparent 75%, #fff 75%);
+  background-size: 120px 120px;
+  background-position:
+    0 0,
+    60px 60px;
+}
+
+.hero-glow {
+  background:
+    radial-gradient(1100px 500px at 78% -10%, rgba(15, 102, 194, 0.55), transparent 60%),
+    linear-gradient(180deg, #0b1f44, #0a1a3a);
+}
+
+/* sikme pruhy pre placeholder dlazdice bez fotky */
+.photo-placeholder {
+  background: repeating-linear-gradient(135deg, #e7ebf1 0 14px, #dde3ec 14px 28px);
+}
+.photo-placeholder-dark {
+  background: repeating-linear-gradient(135deg, #12346b 0 12px, #0f2a58 12px 24px);
+}
