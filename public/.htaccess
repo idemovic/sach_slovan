@@ -1,0 +1,12 @@
+# SPA fallback: cesty ako /news alebo /history nie su realne subory -
+# router ich riesi v prehliadaci, server musi na ne vratit index.html.
+# Realne subory (napr. /files/*.pdf, obrazky, JS/CSS) maju prednost.
+RewriteEngine On
+RewriteBase /
+RewriteRule ^index\.html$ - [L]
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule . /index.html [L]
+
+# Sem neskor pribudnu redirecty zo starych URL (PLAN.md sekcia 6, krok 8),
+# napr.: Redirect 301 /sitemap.html /archive

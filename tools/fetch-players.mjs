@@ -1,4 +1,4 @@
-// Stiahne supisku SK Slovan Bratislava z matriky SSZ (chess.sk) a zapise ju
+// Stiahne supisku ŠK Slovan Bratislava z matriky SSZ (chess.sk) a zapise ju
 // do content/data/players.json. Spustenie: npm run fetch:players
 import { writeFileSync } from 'node:fs'
 import { fileURLToPath } from 'node:url'

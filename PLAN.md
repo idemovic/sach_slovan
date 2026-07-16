@@ -1,4 +1,4 @@
-# SK Slovan Bratislava - website rebuild plan
+# ŠK Slovan Bratislava - website rebuild plan
 
 Goal: replace https://www.slovan-bratislava.com (1990s frameset site, content frozen around 2013)
 with the new visual in `SK Slovan Bratislava.dc.html`, without losing the historical archive.
@@ -59,7 +59,9 @@ Structure pulled from its `sitemap.html`:
 ### C. Drop or replace with live sources
 - Rating FIDE SVK k 1.5.2013 (celoslovensky rebricek) - novy web nezobrazuje data
   o hracoch mimo klubu; stara stranka ide iba do /archive. Zive ratingy sa zobrazuju
-  vylucne pre hracov Slovana (sekcia "Tim"), s linkami na ich chess.sk / FIDE profily
+  vylucne pre hracov Slovana (sekcia "Tim"), s linkami na ich chess.sk / FIDE profily.
+  Jedina vynimka: supiska A-timu (team-a.json) moze obsahovat hostujucich hracov,
+  ktori nie su clenmi klubu
 - FIDE pravidla 2009 - linkovat aktualne pravidla na handbook.fide.com
 - Stranka externych linkov - vybrat 2-3 zive do patky, zvysok zahodit
 - Propozicie 2013 - iba archiv
@@ -97,7 +99,7 @@ Minimal alternative: only `/` + `/news` + `/archive` (historia a dokumenty ako s
 |---|---|---|
 | Hero (claim, statistiky) | Historia.pdf, Clenovia.pdf | overit cisla, nahradit placeholdery |
 | O klube | Historia.pdf | prepisat text podla realnej historie |
-| Tim (8 kariet hracov) | chess.sk supiska + FIDE ELO | realne mena a ratingy, foto ak su |
+| Tim (karty A-timu + tabulka klubu) | team-a.json (rucne, moze mat hostov) + players.json (matrika) | doplnit realnu supisku A-timu |
 | Kalendar | klub (turnaje, extraliga, klubove vecery) | dodat realne terminy |
 | Novinky | markdown posty v content/news/ | dodat 3+ realne spravy |
 | Galeria | Slovanfoto.pdf (extrahovat) + nove foto | nahradit placeholder dlazdice |
@@ -195,7 +197,8 @@ GitHub web editor vratane uploadu obrazkov) - ziadny CMS, ziadna databaza.
 - Na webe nezostal ziaden vymysleny fakt z demo layoutu (mena hracov, cisla,
   rok zalozenia, treningove kategorie).
 - Mimo /archive web nezobrazuje udaje o hracoch, ktori nie su clenmi klubu
-  (ratingy, rebricky, supisky inych klubov).
+  (ratingy, rebricky, supisky inych klubov). Vynimka: hostujuci hraci na
+  supiske A-timu (content/data/team-a.json).
 - Web funguje na mobile (360px) aj desktope bez horizontalneho scrollu.
 - Formular alebo kontakt realne dorucuje spravy.
 
@@ -208,3 +211,6 @@ GitHub web editor vratane uploadu obrazkov) - ziadny CMS, ziadna databaza.
 3. Klubove vecery - stvrtok (stary web) alebo utorok+stvrtok (demo)?
 4. Kam sa bude web nasadzovat (hosting)? Novinky su vyriesene ako markdown v gite -
    kto ich bude pridavat, potrebuje pristup do repa (staci GitHub web editor).
+5. Realna supiska A-timu pre aktualnu sezonu (chess.sk supisky extraligy) -
+   doplnit rucne do content/data/team-a.json; mozu tam byt aj hostujuci hraci,
+   kym je prazdna, web zobrazuje top 8 z matriky.

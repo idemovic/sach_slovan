@@ -1,8 +1,20 @@
 import data from '../../../content/data/players.json'
+import teamAData from '../../../content/data/team-a.json'
 import { formatDate } from '../../lib/news'
 
-const players = data.players
-const top = players.slice(0, 8)
+// hostujuci hraci A-timu nemusia byt v matrike klubu, preto maju sszId volitelne
+type Player = {
+  name: string
+  title?: string | null
+  elo: number
+  fideId?: string
+  sszId?: string
+}
+
+const players = data.players as Player[]
+const teamA = teamAData.players as Player[]
+// prazdna supiska A-timu -> docasny fallback na top 8 hracov z matriky
+const cards = teamA.length > 0 ? teamA : players.slice(0, 8)
 
 function initials(name: string): string {
   const parts = name.split(/\s+/)
@@ -11,6 +23,18 @@ function initials(name: string): string {
 
 function fideUrl(fideId: string): string {
   return `https://ratings.fide.com/profile/${fideId}`
+}
+
+// osobna karta hraca na chess.sk: /clen-<sszId>-<slug>; server berie do uvahy
+// len ciselne ID, ale bez slugu vracia 404
+function sszUrl(sszId: string, name: string): string {
+  const slug = name
+    .normalize('NFD')
+    .replace(/[̀-ͯ]/g, '')
+    .toLowerCase()
+    .replace(/[^a-z0-9]+/g, '-')
+    .replace(/^-+|-+$/g, '')
+  return `https://www.chess.sk/clen-${sszId}-${slug}`
 }
 
 export default function Team() {
@@ -25,13 +49,17 @@ export default function Team() {
             </h2>
           </div>
           <p className="max-w-md text-base leading-relaxed text-slate-600">
-            Najvyššie hodnotení hráči klubu. Zdroj: {data.source}, stav k {formatDate(new Date(data.updated))}.
+            {teamA.length > 0 ? (
+              <>Súpiska A-tímu. Zdroj: {teamAData.source}, stav k {formatDate(new Date(teamAData.updated))}.</>
+            ) : (
+              <>Najvyššie hodnotení hráči klubu. Zdroj: {data.source}, stav k {formatDate(new Date(data.updated))}.</>
+            )}
           </p>
         </div>
         <div className="mt-9 grid grid-cols-1 gap-5 sm:grid-cols-2 lg:grid-cols-4">
-          {top.map((p) => (
+          {cards.map((p) => (
             <article
-              key={p.sszId}
+              key={p.sszId || p.fideId || p.name}
               className="overflow-hidden rounded-2xl border border-slate-200 bg-white shadow-sm transition hover:-translate-y-1 hover:shadow-xl"
             >
               <div className="photo-placeholder relative grid h-48 place-items-center">
@@ -47,14 +75,16 @@ export default function Team() {
               </div>
               <div className="px-4 pb-4.5 pt-4">
                 <div className="font-condensed text-[22px] font-bold uppercase leading-[1.05] text-navy">{p.name}</div>
-                <a
-                  href={fideUrl(p.fideId)}
-                  target="_blank"
-                  rel="noreferrer"
-                  className="mt-1 inline-block text-sm font-semibold text-blue hover:text-blue-dark"
-                >
-                  FIDE profil →
-                </a>
+                {p.fideId && (
+                  <a
+                    href={fideUrl(p.fideId)}
+                    target="_blank"
+                    rel="noreferrer"
+                    className="mt-1 inline-block text-sm font-semibold text-blue hover:text-blue-dark"
+                  >
+                    FIDE profil →
+                  </a>
+                )}
               </div>
             </article>
           ))}
@@ -63,7 +93,7 @@ export default function Team() {
         <details className="group mt-8">
           <summary className="cursor-pointer list-none font-condensed text-lg font-bold uppercase tracking-wide text-blue hover:text-blue-dark">
             <span className="mr-2 inline-block transition group-open:rotate-90">▶</span>
-            Kompletná súpiska ({players.length} hráčov)
+            Kompletná súpiska klubu ({players.length} hráčov)
           </summary>
           <div className="mt-4 overflow-x-auto rounded-2xl border border-slate-200 bg-white shadow-sm">
             <table className="w-full text-left text-[15px]">
@@ -73,6 +103,7 @@ export default function Team() {
                   <th className="px-4 py-3 font-bold">Hráč</th>
                   <th className="px-4 py-3 text-right font-bold">Rating</th>
                   <th className="px-4 py-3 font-bold">FIDE</th>
+                  <th className="px-4 py-3 font-bold">SŠZ</th>
                 </tr>
               </thead>
               <tbody>
@@ -85,9 +116,18 @@ export default function Team() {
                     </td>
                     <td className="px-4 py-2 text-right font-bold text-navy">{p.elo}</td>
                     <td className="px-4 py-2">
-                      <a href={fideUrl(p.fideId)} target="_blank" rel="noreferrer" className="font-semibold text-blue hover:text-blue-dark">
-                        {p.fideId}
-                      </a>
+                      {p.fideId && (
+                        <a href={fideUrl(p.fideId)} target="_blank" rel="noreferrer" className="font-semibold text-blue hover:text-blue-dark">
+                          {p.fideId}
+                        </a>
+                      )}
+                    </td>
+                    <td className="px-4 py-2">
+                      {p.sszId && (
+                        <a href={sszUrl(p.sszId, p.name)} target="_blank" rel="noreferrer" className="font-semibold text-blue hover:text-blue-dark">
+                          {p.sszId}
+                        </a>
+                      )}
                     </td>
                   </tr>
                 ))}

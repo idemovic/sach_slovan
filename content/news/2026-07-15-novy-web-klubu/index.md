@@ -16,6 +16,3 @@ z roku 2002 nahradila moderná stránka, ktorá funguje aj na mobile.
 - **Dokumenty** - stanovy, formuláre pre organizátorov a pravidlá
 
 Historický obsah pôvodného webu zostáva dostupný v sekcii Archív, nič sa nestratilo.
-
-Tento článok je zároveň ukážkou, ako novinky fungujú: článok má voliteľný hlavný
-obrázok a voliteľnú fotogalériu, ktorá sa zobrazuje nižšie.

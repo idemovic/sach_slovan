@@ -18,9 +18,9 @@ export default function Header() {
     <header className="sticky top-0 z-50 border-b border-white/10 bg-navy/90 backdrop-blur-md">
       <nav className="mx-auto flex max-w-7xl items-center gap-7 px-5 py-3 sm:px-7">
         <Link to="/" className="flex items-center gap-3 text-white" onClick={() => setOpen(false)}>
-          <img src="/slovan.png" alt="SK Slovan Bratislava" className="h-10 w-10 object-contain" />
+          <img src="/slovan.png" alt="ŠK Slovan Bratislava" className="h-10 w-10 object-contain" />
           <span className="font-condensed text-lg font-extrabold uppercase leading-none tracking-wide">
-            SK Slovan
+            ŠK Slovan
             <br />
             <span className="text-[13px] font-semibold tracking-[2px] text-sky-light">Bratislava · Šach</span>
           </span>

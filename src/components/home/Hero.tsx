@@ -29,7 +29,7 @@ export default function Hero() {
             <span className="text-sky">na Slovensku</span>
           </h1>
           <p className="mt-6 max-w-lg text-lg leading-relaxed text-slate-300">
-            SK Slovan Bratislava spája vrcholových hráčov extraligy s deťmi, ktoré práve posúvajú
+            ŠK Slovan Bratislava spája vrcholových hráčov extraligy s deťmi, ktoré práve posúvajú
             svojho prvého pešiaka. Tréningy, turnaje a komunita - pre každú úroveň.
           </p>
           <div className="mt-8 flex flex-wrap gap-3.5">
@@ -52,7 +52,7 @@ export default function Hero() {
             <div className="absolute inset-0 rounded-full bg-[radial-gradient(circle,rgba(94,160,232,0.35),transparent_68%)]" />
             <img
               src="/slovan.png"
-              alt="Znak klubu SK Slovan Bratislava"
+              alt="Znak klubu ŠK Slovan Bratislava"
               className="relative h-56 w-56 object-contain drop-shadow-[0_20px_40px_rgba(0,0,0,0.4)]"
             />
           </div>

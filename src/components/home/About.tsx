@@ -4,8 +4,8 @@ export default function About() {
   return (
     <section id="klub" className="mx-auto max-w-7xl scroll-mt-20 px-5 py-16 sm:px-7 md:py-24">
       <div className="grid grid-cols-1 items-center gap-10 md:grid-cols-[0.9fr_1.1fr] md:gap-14">
-        <div className="photo-placeholder grid h-64 place-items-center overflow-hidden rounded-2xl border border-slate-200 md:h-96">
-          <span className="font-mono text-[13px] tracking-wide text-slate-400">[ foto: klubovňa / turnaj ]</span>
+        <div className="h-64 overflow-hidden rounded-2xl border border-slate-200 md:h-96">
+          <img src="/klubovna.jpg" alt="Klubovňa ŠK Slovan Bratislava" className="h-full w-full object-cover" />
         </div>
         <div>
           <span className="font-condensed text-[15px] font-bold uppercase tracking-[2.5px] text-red">O klube</span>

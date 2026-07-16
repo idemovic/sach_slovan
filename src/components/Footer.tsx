@@ -7,9 +7,9 @@ export default function Footer() {
       <div className="mx-auto grid max-w-7xl grid-cols-1 gap-9 px-5 pb-9 pt-14 sm:px-7 md:grid-cols-3">
         <div>
           <div className="flex items-center gap-3">
-            <img src="/slovan.png" alt="SK Slovan Bratislava" className="h-11 w-11 object-contain" />
+            <img src="/slovan.png" alt="ŠK Slovan Bratislava" className="h-11 w-11 object-contain" />
             <span className="font-condensed text-xl font-extrabold uppercase leading-none">
-              SK Slovan Bratislava
+              ŠK Slovan Bratislava
               <br />
               <span className="text-[13px] font-semibold tracking-[2px] text-sky-light">Šachový klub</span>
             </span>
@@ -42,7 +42,7 @@ export default function Footer() {
       </div>
       <div className="border-t border-white/10">
         <div className="mx-auto flex max-w-7xl flex-wrap justify-between gap-2.5 px-5 py-4 text-sm text-slate-500 sm:px-7">
-          <span>© {new Date().getFullYear()} SK Slovan Bratislava - šachový klub</span>
+          <span>© {new Date().getFullYear()} ŠK Slovan Bratislava - šachový klub</span>
           <Link to="/archive" className="hover:text-slate-300">Archív pôvodného webu</Link>
         </div>
       </div>

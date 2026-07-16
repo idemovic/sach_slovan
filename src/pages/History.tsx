@@ -1,7 +1,8 @@
+import { Link } from 'react-router-dom'
 import PageHeader from '../components/PageHeader'
+import { personalities } from '../lib/personalities'
 
 const DL = 'https://download.slovan-bratislava.com'
-const OLD = 'https://www.slovan-bratislava.com'
 
 const documents = [
   { label: 'História klubu (PDF)', href: `${DL}/Historia/Klub/Historia.pdf` },
@@ -10,17 +11,15 @@ const documents = [
   { label: 'Zápisnica z roku 1945 (PDF)', href: `${DL}/Historia/Klub/1945Zapisnica.pdf` },
 ]
 
-// TODO: obsah profilov zatial zije na povodnom webe - po zozrkadleni presunut pod /files
-const personalities = [
-  { name: 'Gustáv Šturc', href: `${OLD}/Osobnosti/SturcG.htm` },
-  { name: 'Peter Petrán', href: `${OLD}/Osobnosti/Petran.htm` },
-  { name: 'Tadeáš Nemec', href: `${OLD}/Osobnosti/NemecZiv.htm` },
-  { name: 'Anton Kramárik', href: `${OLD}/Osobnosti/Kramarik.htm` },
-  { name: 'Ján Báňas', href: `${OLD}/Osobnosti/Banas.htm` },
-  { name: 'Miroslav Malác', href: `${OLD}/Osobnosti/Malac.htm` },
-  { name: 'Július Kozma', href: `${OLD}/Osobnosti/Kozma.htm` },
-  { name: 'Miloš Hebelka', href: `${OLD}/Osobnosti/Hebelka.pdf` },
-]
+function Initials({ name }: { name: string }) {
+  return (
+    <div className="photo-placeholder mb-4 grid aspect-square place-items-center rounded-xl">
+      <span className="font-condensed text-4xl font-extrabold text-slate-300">
+        {name.split(' ').map((n) => n[0]).join('')}
+      </span>
+    </div>
+  )
+}
 
 export default function History() {
   return (
@@ -61,23 +60,17 @@ export default function History() {
           </p>
           <div className="mt-6 grid grid-cols-2 gap-3.5 sm:grid-cols-3 lg:grid-cols-4">
             {personalities.map((p) => (
-              <a
-                key={p.name}
-                href={p.href}
-                target="_blank"
-                rel="noreferrer"
+              <Link
+                key={p.slug}
+                to={`/history/${p.slug}`}
                 className="group rounded-2xl border border-slate-200 bg-white p-5 shadow-sm transition hover:-translate-y-0.5 hover:shadow-md"
               >
-                <div className="photo-placeholder mb-4 grid aspect-square place-items-center rounded-xl">
-                  <span className="font-condensed text-4xl font-extrabold text-slate-300">
-                    {p.name.split(' ').map((n) => n[0]).join('')}
-                  </span>
-                </div>
+                <Initials name={p.name} />
                 <div className="font-condensed text-xl font-bold uppercase leading-tight text-navy group-hover:text-blue">
                   {p.name}
                 </div>
                 <div className="mt-1 text-sm font-semibold text-slate-400">profil →</div>
-              </a>
+              </Link>
             ))}
           </div>
         </section>

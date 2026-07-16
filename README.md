@@ -1,6 +1,6 @@
-# SK Slovan Bratislava - klubovy web
+# ŠK Slovan Bratislava - klubovy web
 
-Novy web sachoveho klubu SK Slovan Bratislava, nahrada za povodny frameset web
+Novy web sachoveho klubu ŠK Slovan Bratislava, nahrada za povodny frameset web
 na https://www.slovan-bratislava.com. Migracny plan a stav: [PLAN.md](PLAN.md).
 
 ## Tech stack
@@ -84,15 +84,26 @@ hracov filtrovany na klub "ŠK Slovan Bratislava", vytiahne meno, FIDE titul,
 rating a FIDE ID a zapise ich do `content/data/players.json` aj s datumom stavu.
 Subor NEUPRAVUJTE rucne - dalsi beh skriptu ho prepise.
 
-Web zobrazuje top 8 hracov podla ratingu ako karty a kompletnu supisku
+Web zobrazuje supisku A-timu ako karty a kompletnu supisku klubu
 v rozbalovacej tabulke, s odkazmi na FIDE profily.
 
 Kedy spustit: po prestupoch alebo novom ratingovom rebricku (staci raz za cas,
 data sa zapecu do buildu). Pozor: zobrazujeme len hracov Slovana - skript
 filtruje presnu zhodu nazvu klubu a nic ine na web nepatri (viz PLAN.md).
+Jedina vynimka je supiska A-timu (nizsie), kde mozu byt hostujuci hraci.
+
+### Supiska A-timu
+
+A-tim ma vlastnu supisku v `content/data/team-a.json` (rovnaky format ako
+players.json), ktora sa upravuje RUCNE - moze obsahovat aj hostujucich hracov
+mimo klubu, takze sa neda generovat z matriky (`sszId` vtedy mozno vynechat).
+Kym je zoznam prazdny, web docasne zobrazuje top 8 hracov z matriky.
 
 ## Ostatny obsah
 
+- `content/personalities/` - galeria osobnosti na /history: jeden .md subor
+  (frontmatter + Markdown) = jeden profil, originaly PDF su
+  v `public/files/Osobnosti/`. Format: [content/README.md](content/README.md).
 - `content/data/sponsors.json` - sponzori `[{ "name", "url", "logo" }]`;
   prazdny zoznam = sekcia sa nezobrazi.
 - Texty sekcii (O klube, Trening, Kontakt...) su priamo v komponentoch
@@ -108,8 +119,8 @@ public/            staticke subory (logo, favicon, archiv PDF)
 reference/         povodne demo dizajnu - len ako vizualna predloha
 src/
   components/      Header, Footer, Lightbox, PostCard, sekcie homepage
-  lib/             news.ts, events.ts, markdown.ts (nacitanie obsahu)
-  pages/           Home, NewsList, NewsPost, History, Archive, Documents
+  lib/             news.ts, events.ts, personalities.ts, markdown.ts (nacitanie obsahu)
+  pages/           Home, NewsList, NewsPost, History, Personality, Archive, Documents
 tools/             fetch-players.mjs (supiska z chess.sk)
 ```
 
@@ -121,5 +132,6 @@ cez Formspree nastavte pri builde premennu `VITE_FORMSPREE_ENDPOINT`.
 ## TODO pred spustenim
 
 Neoverene fakty z navrhu su oznacene `TODO` v kode a zhrnute v PLAN.md sekcii 8:
-treningove kategorie a cas klubovych vecerov. Dalej treba zozrkadlit stary web
-do `public/files/` a nastavit redirecty (PLAN.md sekcia 6).
+treningove kategorie a cas klubovych vecerov. Dalej treba doplnit realnu supisku
+A-timu do `content/data/team-a.json`, zozrkadlit stary web do `public/files/`
+a nastavit redirecty (PLAN.md sekcia 6).

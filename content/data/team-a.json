@@ -1,0 +1,6 @@
+{
+  "updated": "2026-07-15",
+  "source": "súpiska extraligy (chess.sk)",
+  "note": "Upravuje sa RUCNE - rovnaky format ako players.json. Supiska A-timu moze obsahovat aj hostujucich hracov, ktori nie su clenmi klubu (sszId vtedy moze chybat). Prazdny zoznam players = web docasne zobrazi top 8 hracov z players.json.",
+  "players": []
+}
