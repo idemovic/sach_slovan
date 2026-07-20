@@ -85,6 +85,8 @@ Structure pulled from its `sitemap.html`:
 /news        Zoznam vsetkych noviniek (markdown posty)
 /news/:slug  Detail clanku (hero obrazok + text + volitelna galeria)
 /history     Historia klubu + Galeria osobnosti (8 profilov v novom vizuale)
+/vysledky    Vysledky druzstiev za sezonu (konecne umiestnenie A/B/C... v ligach,
+             medaila za umiestnenie do 3. miesta) - z content/data/standings.json
 /archive     Turnajovy archiv - tabulka rocnikov s linkami na PDF / chess-results
              + ligy 1969-2013 + partie
 /documents   Stanovy, formulare pre organizatorov, pravidla (linky na aktualne FIDE)
@@ -104,7 +106,7 @@ Minimal alternative: only `/` + `/news` + `/archive` (historia a dokumenty ako s
 | Novinky | markdown posty v content/news/ | dodat 3+ realne spravy |
 | Galeria | Slovanfoto.pdf (extrahovat) + nove foto | nahradit placeholder dlazdice |
 | Trening/clenstvo | klub - OVERIT: pripravka/akademia/dospeli su v demo vymyslene | potvrdit alebo prepisat |
-| Kontakt | Adresa.pdf + realny email | overit "utorok a stvrtok" - stary web hovori o STVRTKOCH |
+| Kontakt | Adresa.pdf + realny email | hotovo - klubove vecery stvrtok od 17:00 (potvrdene) |
 | Sponzori | klub | realne loga alebo vypustit |
 
 ## 5. Tech stack and architecture
@@ -208,7 +210,7 @@ GitHub web editor vratane uploadu obrazkov) - ziadny CMS, ziadna databaza.
    1995/96, 98/99, 00/01, 01/02, 08/09, 12/13 (Wikipedia, overene proti extralige
    2024/25); pocty hracov sa pocitaju dynamicky z players.json (matrika SSZ).
 2. Existuje mladeznicka akademia s kategoriami ako v demo, alebo prepisat?
-3. Klubove vecery - stvrtok (stary web) alebo utorok+stvrtok (demo)?
+3. VYRIESENE: klubove vecery su vo stvrtok od 17:00 (potvrdene klubom).
 4. Kam sa bude web nasadzovat (hosting)? Novinky su vyriesene ako markdown v gite -
    kto ich bude pridavat, potrebuje pristup do repa (staci GitHub web editor).
 5. Realna supiska A-timu pre aktualnu sezonu (chess.sk supisky extraligy) -

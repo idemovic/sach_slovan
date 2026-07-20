@@ -1,10 +1,12 @@
 import { useState } from 'react'
 import { Link } from 'react-router-dom'
+import { CLUB_PORTAL_URL } from '../lib/club'
 
 const links = [
   { to: '/#klub', label: 'Klub' },
   { to: '/#tim', label: 'Tím' },
   { to: '/#kalendar', label: 'Kalendár' },
+  { to: '/vysledky', label: 'Výsledky' },
   { to: '/news', label: 'Novinky' },
   { to: '/history', label: 'História' },
   { to: '/archive', label: 'Archív' },
@@ -26,15 +28,23 @@ export default function Header() {
           </span>
         </Link>
         <div className="flex-1" />
-        <div className="hidden items-center gap-6 lg:flex">
+        <div className="hidden items-center gap-x-5 gap-y-0 lg:flex xl:gap-x-6">
           {links.map((l) => (
-            <Link key={l.to} to={l.to} className="text-[15px] font-semibold text-slate-300 hover:text-white">
+            <Link key={l.to} to={l.to} className="whitespace-nowrap text-[15px] font-semibold text-slate-300 hover:text-white">
               {l.label}
             </Link>
           ))}
+          <a
+            href={CLUB_PORTAL_URL}
+            target="_blank"
+            rel="noreferrer"
+            className="whitespace-nowrap rounded-md border border-white/30 px-4 py-2.5 font-condensed text-[15px] font-bold uppercase tracking-wide text-white hover:border-white/60"
+          >
+            Prihlásenie
+          </a>
           <Link
             to="/#kontakt"
-            className="rounded-md bg-red px-4 py-2.5 font-condensed text-[15px] font-bold uppercase tracking-wide text-white hover:bg-[#b81824]"
+            className="whitespace-nowrap rounded-md bg-red px-4 py-2.5 font-condensed text-[15px] font-bold uppercase tracking-wide text-white hover:bg-[#b81824]"
           >
             Staň sa členom
           </Link>
@@ -62,10 +72,19 @@ export default function Header() {
                 {l.label}
               </Link>
             ))}
+            <a
+              href={CLUB_PORTAL_URL}
+              target="_blank"
+              rel="noreferrer"
+              onClick={() => setOpen(false)}
+              className="mt-2 rounded-md border border-white/30 px-4 py-3 text-center font-condensed text-base font-bold uppercase tracking-wide text-white"
+            >
+              Prihlásenie
+            </a>
             <Link
               to="/#kontakt"
               onClick={() => setOpen(false)}
-              className="mt-2 rounded-md bg-red px-4 py-3 text-center font-condensed text-base font-bold uppercase tracking-wide text-white"
+              className="mt-1 rounded-md bg-red px-4 py-3 text-center font-condensed text-base font-bold uppercase tracking-wide text-white"
             >
               Staň sa členom
             </Link>

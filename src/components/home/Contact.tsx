@@ -1,5 +1,5 @@
 import { useState, type FormEvent } from 'react'
-import { CLUB_ADDRESS, CLUB_EMAIL, CLUB_MAPS_URL } from '../../lib/club'
+import { CLUB_ADDRESS, CLUB_EMAIL, CLUB_FACEBOOK_URL, CLUB_MAPS_URL } from '../../lib/club'
 
 const inputCls =
   'rounded-lg border border-slate-300 px-3.5 py-2.5 text-[15px] outline-none focus:border-blue focus:ring-[3px] focus:ring-blue/15'
@@ -39,7 +39,6 @@ export default function Contact() {
             Napíš nám cez formulár alebo príď priamo na klubový večer. Prvá tréningová hodina je
             zadarmo - stačí prísť.
           </p>
-          {/* TODO: overit cas klubovych vecerov (PLAN.md sekcia 8) */}
           <div className="mt-7 flex flex-col gap-4">
             <div className="flex items-start gap-3.5">
               <span className="text-xl">📍</span>
@@ -64,7 +63,16 @@ export default function Contact() {
               <span className="text-xl">🕑</span>
               <div>
                 <div className="font-bold text-navy">Klubové večery</div>
-                <div className="text-slate-500">Štvrtok</div>
+                <div className="text-slate-500">Štvrtok od 17:00</div>
+              </div>
+            </div>
+            <div className="flex items-start gap-3.5">
+              <span className="text-xl">📘</span>
+              <div>
+                <div className="font-bold text-navy">Facebook</div>
+                <a href={CLUB_FACEBOOK_URL} target="_blank" rel="noreferrer" className="text-blue hover:text-blue-dark">
+                  facebook.com/Slovanchess
+                </a>
               </div>
             </div>
           </div>

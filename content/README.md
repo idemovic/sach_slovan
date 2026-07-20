@@ -83,5 +83,9 @@ v `public/files/Osobnosti/`.
   ako players.json. Moze obsahovat aj hostujucich hracov, ktori nie su clenmi
   klubu - preto sa negeneruje z matriky (`sszId` vtedy mozno vynechat).
   Kym je zoznam `players` prazdny, web docasne zobrazi top 8 z players.json.
+- `standings.json` - konecne umiestnenie druzstiev Slovana v sutaziach danej
+  sezony. NEUPRAVUJTE RUCNE - subor generuje prikaz `npm run fetch:standings`
+  (prejde chess.sk / chess-results.com). Spustit po skonceni sezony. Zobrazuje
+  sa na stranke /vysledky.
 - `sponsors.json` - sponzori: `[{ "name": "...", "url": "...", "logo": "..." }]`.
   Ak je zoznam prazdny, sekcia sa na webe nezobrazi.

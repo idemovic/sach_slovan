@@ -99,6 +99,22 @@ players.json), ktora sa upravuje RUCNE - moze obsahovat aj hostujucich hracov
 mimo klubu, takze sa neda generovat z matriky (`sszId` vtedy mozno vynechat).
 Kym je zoznam prazdny, web docasne zobrazuje top 8 hracov z matriky.
 
+## Ako aktualizovat vysledky druzstiev (sezona)
+
+```
+npm run fetch:standings
+```
+
+Skript `tools/fetch-standings.mjs` prejde vsetky slovenske sutaze druzstiev danej
+sezony (chess.sk -> chess-results.com), v kazdej najde tabulku "Tabulka podla
+poradia (MP)" a vytiahne konecne umiestnenie vsetkych druzstiev Slovana (A, B, C...)
+do `content/data/standings.json`. Subor NEUPRAVUJTE rucne. Zobrazuje sa na
+stranke /vysledky, umiestnenia do 3. miesta dostanu medailu.
+
+Sezona sa nastavuje konstantami `SEASON_VALUE` a `SEASON_LABEL` na zaciatku skriptu -
+po skonceni dalsej sezony ich treba zvysit (hodnota = filter zo selectu na chess.sk).
+Kedy spustit: po skonceni sezony, ked su vysledky finalne.
+
 ## Ostatny obsah
 
 - `content/personalities/` - galeria osobnosti na /history: jeden .md subor
@@ -120,8 +136,8 @@ reference/         povodne demo dizajnu - len ako vizualna predloha
 src/
   components/      Header, Footer, Lightbox, PostCard, sekcie homepage
   lib/             news.ts, events.ts, personalities.ts, markdown.ts (nacitanie obsahu)
-  pages/           Home, NewsList, NewsPost, History, Personality, Archive, Documents
-tools/             fetch-players.mjs (supiska z chess.sk)
+  pages/           Home, NewsList, NewsPost, History, Personality, Results, Archive, Documents
+tools/             fetch-players.mjs (supiska), fetch-standings.mjs (vysledky druzstiev)
 ```
 
 ## Kontaktny formular
@@ -132,6 +148,6 @@ cez Formspree nastavte pri builde premennu `VITE_FORMSPREE_ENDPOINT`.
 ## TODO pred spustenim
 
 Neoverene fakty z navrhu su oznacene `TODO` v kode a zhrnute v PLAN.md sekcii 8:
-treningove kategorie a cas klubovych vecerov. Dalej treba doplnit realnu supisku
-A-timu do `content/data/team-a.json`, zozrkadlit stary web do `public/files/`
+treningove kategorie. Dalej treba doplnit realnu supisku A-timu do
+`content/data/team-a.json`, zozrkadlit stary web do `public/files/`
 a nastavit redirecty (PLAN.md sekcia 6).

@@ -1,0 +1,98 @@
+{
+  "season": "2025/2026",
+  "updated": "2026-07-20",
+  "source": "chess-results.com (cez chess.sk)",
+  "standings": [
+    {
+      "league": "TIPOS šachová extraliga",
+      "team": "ŠK Slovan Bratislava",
+      "rank": 8,
+      "teams": 12,
+      "url": "https://chess-results.com/tnr1237261.aspx?lan=4&art=83"
+    },
+    {
+      "league": "1. liga Západ",
+      "team": "ŠK Slovan Bratislava B",
+      "rank": 4,
+      "teams": 12,
+      "url": "https://chess-results.com/tnr1237621.aspx?lan=4&art=83"
+    },
+    {
+      "league": "2. liga A",
+      "team": "ŠK Slovan Bratislava C",
+      "rank": 3,
+      "teams": 12,
+      "url": "https://chess-results.com/tnr1245995.aspx?lan=4&art=83"
+    },
+    {
+      "league": "3. liga A1",
+      "team": "ŠK Slovan Bratislava E",
+      "rank": 4,
+      "teams": 12,
+      "url": "https://chess-results.com/tnr1259581.aspx?lan=4&art=83"
+    },
+    {
+      "league": "3. liga A1",
+      "team": "ŠK Slovan Bratislava D",
+      "rank": 5,
+      "teams": 12,
+      "url": "https://chess-results.com/tnr1259581.aspx?lan=4&art=83"
+    },
+    {
+      "league": "4. liga A11",
+      "team": "ŠK Slovan Bratislava F",
+      "rank": 1,
+      "teams": 14,
+      "url": "https://chess-results.com/tnr1259419.aspx?lan=4&art=83"
+    },
+    {
+      "league": "4. liga A11",
+      "team": "ŠK Slovan Bratislava H",
+      "rank": 2,
+      "teams": 14,
+      "url": "https://chess-results.com/tnr1259419.aspx?lan=4&art=83"
+    },
+    {
+      "league": "4. liga A11",
+      "team": "ŠK Slovan Bratislava G",
+      "rank": 10,
+      "teams": 14,
+      "url": "https://chess-results.com/tnr1259419.aspx?lan=4&art=83"
+    },
+    {
+      "league": "5. liga A11a",
+      "team": "ŠK Slovan Bratislava M",
+      "rank": 7,
+      "teams": 14,
+      "url": "https://chess-results.com/tnr1259851.aspx?lan=4&art=83"
+    },
+    {
+      "league": "5. liga A11a",
+      "team": "ŠK Slovan Bratislava K",
+      "rank": 8,
+      "teams": 14,
+      "url": "https://chess-results.com/tnr1259851.aspx?lan=4&art=83"
+    },
+    {
+      "league": "5. liga A11a",
+      "team": "ŠK Slovan Bratislava J",
+      "rank": 11,
+      "teams": 14,
+      "url": "https://chess-results.com/tnr1259851.aspx?lan=4&art=83"
+    },
+    {
+      "league": "5. liga A11b",
+      "team": "ŠK Slovan Bratislava I",
+      "rank": 1,
+      "teams": 14,
+      "url": "https://chess-results.com/tnr1260467.aspx?lan=4&art=83"
+    },
+    {
+      "league": "5. liga A11b",
+      "team": "ŠK Slovan Bratislava L",
+      "rank": 13,
+      "teams": 14,
+      "url": "https://chess-results.com/tnr1260467.aspx?lan=4&art=83"
+    }
+  ]
+}

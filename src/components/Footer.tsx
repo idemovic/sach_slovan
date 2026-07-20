@@ -1,5 +1,5 @@
 import { Link } from 'react-router-dom'
-import { CLUB_ADDRESS, CLUB_EMAIL, CLUB_MAPS_URL } from '../lib/club'
+import { CLUB_ADDRESS, CLUB_EMAIL, CLUB_FACEBOOK_URL, CLUB_MAPS_URL } from '../lib/club'
 
 export default function Footer() {
   return (
@@ -23,6 +23,7 @@ export default function Footer() {
           <div className="flex flex-col gap-2">
             <Link to="/#klub" className="text-slate-300 hover:text-white">O klube</Link>
             <Link to="/#tim" className="text-slate-300 hover:text-white">Tím</Link>
+            <Link to="/vysledky" className="text-slate-300 hover:text-white">Výsledky</Link>
             <Link to="/news" className="text-slate-300 hover:text-white">Novinky</Link>
             <Link to="/history" className="text-slate-300 hover:text-white">História</Link>
             <Link to="/archive" className="text-slate-300 hover:text-white">Archív</Link>
@@ -33,9 +34,12 @@ export default function Footer() {
           <div className="mb-3.5 font-condensed text-sm font-bold uppercase tracking-[1.5px] text-sky-light">Kontakt</div>
           <div className="flex flex-col gap-2 text-slate-300">
             <a href={`mailto:${CLUB_EMAIL}`} className="hover:text-white">{CLUB_EMAIL}</a>
-            <span>Klubové štvrtky</span>
+            <span>Klubové večery: štvrtok od 17:00</span>
             <a href={CLUB_MAPS_URL} target="_blank" rel="noreferrer" className="hover:text-white">
               {CLUB_ADDRESS}
+            </a>
+            <a href={CLUB_FACEBOOK_URL} target="_blank" rel="noreferrer" className="hover:text-white">
+              Facebook
             </a>
           </div>
         </div>

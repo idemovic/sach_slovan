@@ -1,3 +1,5 @@
+import { Link } from 'react-router-dom'
+
 const chips = ['Extraliga družstiev', 'Mládežnícka akadémia', 'Otvorené turnaje', 'Online liga']
 
 export default function About() {
@@ -28,6 +30,9 @@ export default function About() {
               </span>
             ))}
           </div>
+          <Link to="/history" className="mt-6 inline-block font-semibold text-blue hover:text-blue-dark">
+            Viac o histórii klubu →
+          </Link>
         </div>
       </div>
     </section>
