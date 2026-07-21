@@ -1,5 +1,6 @@
 import { Link } from 'react-router-dom'
-import { CLUB_ADDRESS, CLUB_EMAIL, CLUB_FACEBOOK_URL, CLUB_MAPS_URL } from '../lib/club'
+import { CLUB_ADDRESS, CLUB_EMAIL, CLUB_MAPS_URL } from '../lib/club'
+import FacebookLink from './FacebookLink'
 
 export default function Footer() {
   return (
@@ -39,9 +40,7 @@ export default function Footer() {
             <a href={CLUB_MAPS_URL} target="_blank" rel="noreferrer" className="hover:text-white">
               {CLUB_ADDRESS}
             </a>
-            <a href={CLUB_FACEBOOK_URL} target="_blank" rel="noreferrer" className="hover:text-white">
-              Facebook
-            </a>
+            <FacebookLink className="hover:text-white">Facebook</FacebookLink>
           </div>
         </div>
       </div>

@@ -1,3 +1,54 @@
+## Visual Studio / .NET
+.vs/
+*.user
+*.suo
+bin/
+obj/
+*.swp
+*.sln.docstates
+TestResults/
+*.coverage
+*.opencover.xml
+*.lscache
+
+## ASP.NET Core
+!web.config
+web.*.config
+dotnet-tools.json
+
+## Node / Vite / React
 node_modules/
 dist/
+.cache/
 *.local
+
+## Environment files
+.env
+.env.*
+frontend/.env
+frontend/.env.local
+!.env.deploy.example
+!.env.example
+
+## OS
+.DS_Store
+Thumbs.db
+desktop.ini
+
+## JetBrains IDEs
+.idea/
+*.iml
+
+## VSCode
+.vscode/settings.json
+.vscode/launch.json
+
+## Claude
+.claude/commands
+.claude/settings.local.json
+
+## Custom
+backend/CRM.Dashboard.API/wwwroot
+elia-assistant-chatui-*.tgz
+frontend/build/
+web/work

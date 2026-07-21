@@ -1,3 +1,11 @@
+# Poistka: .env do webroot nepatri (cita sa o uroven vyssie), ale keby sa tam
+# omylom dostal, Apache by ho poslal ako text aj so SMTP heslom.
+<IfModule mod_authz_core.c>
+  <FilesMatch "^\.env">
+    Require all denied
+  </FilesMatch>
+</IfModule>
+
 # SPA fallback: cesty ako /news alebo /history nie su realne subory -
 # router ich riesi v prehliadaci, server musi na ne vratit index.html.
 # Realne subory (napr. /files/*.pdf, obrazky, JS/CSS) maju prednost.

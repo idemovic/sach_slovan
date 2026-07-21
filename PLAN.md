@@ -173,7 +173,9 @@ GitHub web editor vratane uploadu obrazkov) - ziadny CMS, ziadna databaza.
   prepisu ako React komponenty s Tailwind triedami.
 - Responzivita: Tailwind breakpointy, fixne 3-4 stlpcove gridy z dema prepisat
   na 1/2/3-4 stlpce, hero nadpis skalovat.
-- Kontaktny formular: Formspree (alebo mailto fallback) - staticky web nema server.
+- Kontaktny formular: vlastny PHP endpoint `public/php/contactForm.php`
+  (PHPMailer cez SMTP) + honeypot a Cloudflare Turnstile; mailto fallback,
+  kym nie je nastaveny Turnstile kluc. Hosting musi vediet PHP.
 - SEO: SPA staci na start; ak bude treba indexacia clankov Googlom, doplni sa
   prerender build krok (bez zmeny architektury).
 
@@ -189,7 +191,8 @@ GitHub web editor vratane uploadu obrazkov) - ziadny CMS, ziadna databaza.
 5. **Extract facts** z klucovych PDF (Historia, Adresa, Vedenie, Clenovia) a
    naplnit realny obsah; supiska a ELO hracov Slovana z chess.sk.
 6. **Subpages** /history, /archive, /documents + presun PDF do public/files/.
-7. **Kontaktny formular** napojit (Formspree) alebo docasne mailto.
+7. **Kontaktny formular** hotovo - PHP endpoint + Turnstile; ostava vyplnit `.env`
+   (SMTP a Turnstile kluce) na hostingu.
 8. **Deploy + redirecty** zo starych URL (aspon sitemap.html a hlavne turnajove
    stranky) na nove ekvivalenty.
 

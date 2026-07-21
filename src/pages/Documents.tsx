@@ -13,10 +13,6 @@ const groups: DocGroup[] = [
     title: 'Klubové dokumenty',
     items: [
       { label: 'Stanovy klubu (2011)', href: `${DL}/Historia/Klub/2011Stanovy.pdf` },
-      { label: 'Vedenie klubu', href: `${DL}/Historia/Klub/Vedenie.pdf` },
-      { label: 'Zoznam členov', href: `${DL}/Historia/Klub/Clenovia.pdf` },
-      { label: 'Adresa a mapy', href: `${DL}/Historia/Klub/Adresa.pdf` },
-      { label: 'Klubové štvrtky', href: `${DL}/Historia/Klub/Klubovna.pdf` },
     ],
   },
   {

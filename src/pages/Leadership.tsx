@@ -4,15 +4,15 @@ import PageHeader from '../components/PageHeader'
 type Person = { role: string; name: string; phone: string; email: string }
 
 const committee: Person[] = [
-  { role: 'Prezident', name: 'Peter Petrán', phone: '+421 905 511 157', email: 'petran@kpklegal.eu' },
-  { role: 'Člen', name: 'Pavel Eiben', phone: '+421 905 204 474', email: 'pavel.eiben@gmail.com' },
-  { role: 'Člen', name: 'Marián Horváth', phone: '+421 903 335 018', email: 'horvath.marian.sk@gmail.com' },
-  { role: 'Člen', name: 'Ľubomír Munk', phone: '+421 905 645 158', email: 'munklubo@gmail.com' },
-  { role: 'Člen', name: 'Radovan Vachálek', phone: '+421 902 902 245', email: 'vachalek.radovan@gmail.com' },
+  { role: 'Prezident klubu', name: 'Peter Petrán', phone: '+421 905 511 157', email: 'petran@kpklegal.eu' },
+  { role: 'Vedúci pre materiálno-technické zabezpečenie klubu', name: 'Pavel Eiben', phone: '+421 905 204 474', email: 'pavel.eiben@gmail.com' },
+  { role: 'Ekonóm klubu', name: 'Marián Horváth', phone: '+421 903 335 018', email: 'horvath.marian.sk@gmail.com' },
+  { role: 'Vedúci pre organizačné záležitosti a propagáciu', name: 'Ľubomír Munk', phone: '+421 905 645 158', email: 'munklubo@gmail.com' },
+  { role: 'Vedúci pre prácu s mládežou, organizačný pracovník', name: 'Radovan Vachálek', phone: '+421 902 902 245', email: 'vachalek.radovan@gmail.com' },
 ]
 
 const controllers: Person[] = [
-  { role: 'Kontrolór', name: 'Miroslav Petrek', phone: '+421 903 787 151', email: 'miroslav.petrek@gmail.com' },
+  { role: 'Kontrolór financií a chodu klubu', name: 'Miroslav Petrek', phone: '+421 903 787 151', email: 'miroslav.petrek@gmail.com' },
 ]
 
 function initials(name: string): string {

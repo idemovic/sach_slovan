@@ -1,30 +1,128 @@
-import { useState, type FormEvent } from 'react'
-import { CLUB_ADDRESS, CLUB_EMAIL, CLUB_FACEBOOK_URL, CLUB_MAPS_URL } from '../../lib/club'
+import { useEffect, useRef, useState, type FormEvent } from 'react'
+import { CLUB_ADDRESS, CLUB_EMAIL, CLUB_MAPS_URL } from '../../lib/club'
+import FacebookLink from '../FacebookLink'
 
 const inputCls =
   'rounded-lg border border-slate-300 px-3.5 py-2.5 text-[15px] outline-none focus:border-blue focus:ring-[3px] focus:ring-blue/15'
 
+// Backend formulara: public/php/contactForm.php sa nasadi spolu s webom (dist/php/).
+const ENDPOINT = '/php/contactForm.php'
+// Verejny kluc Cloudflare Turnstile. Backend bez overenia spravu odmietne,
+// takze kym kluc nie je nastaveny, formular pouzije mailto fallback.
+const TURNSTILE_SITE_KEY = import.meta.env.VITE_TURNSTILE_SITE_KEY as string | undefined
+const TURNSTILE_SRC = 'https://challenges.cloudflare.com/turnstile/v0/api.js?render=explicit'
+
+declare global {
+  interface Window {
+    turnstile?: {
+      render: (el: HTMLElement, opts: { sitekey: string }) => string
+      getResponse: (id?: string) => string | undefined
+      reset: (id?: string) => void
+    }
+  }
+}
+
+const EMPTY_FORM = { name: '', email: '', category: 'Dieťa - prípravka (5-10)', message: '' }
+
+// odpovede contactForm.php -> hlaska pre pouzivatela
+const ERRORS: Record<string, string> = {
+  spam: 'Správa vyzerá ako spam. Skúste to prosím znova.',
+  turnstile_missing: 'Chýba overenie, že nie ste robot. Skúste to prosím znova.',
+  turnstile_error: 'Overenie sa nepodarilo. Skúste to prosím o chvíľu.',
+  turnstile_failed: 'Overenie sa nepodarilo. Skúste to prosím znova.',
+  invalid_input: 'Skontrolujte prosím meno, e-mail a text správy.',
+}
+
 export default function Contact() {
   const [submitted, setSubmitted] = useState(false)
-  const [form, setForm] = useState({ name: '', email: '', category: 'Dieťa - prípravka (5-10)', message: '' })
+  const [sending, setSending] = useState(false)
+  const [error, setError] = useState<string | null>(null)
+  const [form, setForm] = useState(EMPTY_FORM)
+  // Turnstile nacitavame az ked navstevnik zacne formular vyplnat - kto ho
+  // nepouzije, neposiela na Cloudflare ziadnu poziadavku.
+  const [armed, setArmed] = useState(false)
+  const widgetBox = useRef<HTMLDivElement>(null)
+  const widgetId = useRef<string | null>(null)
 
-  async function handleSubmit(e: FormEvent) {
+  // Turnstile vykreslujeme explicitne - implicitne (data-sitekey) sa v SPA
+  // nespusti, ak sa komponent pripoji az po nacitani skriptu.
+  useEffect(() => {
+    if (!TURNSTILE_SITE_KEY || !armed) return
+    const render = () => {
+      if (!widgetBox.current || widgetId.current !== null || !window.turnstile) return
+      widgetId.current = window.turnstile.render(widgetBox.current, { sitekey: TURNSTILE_SITE_KEY })
+    }
+    if (window.turnstile) {
+      render()
+      return
+    }
+    let script = document.querySelector<HTMLScriptElement>(`script[src="${TURNSTILE_SRC}"]`)
+    if (!script) {
+      script = document.createElement('script')
+      script.src = TURNSTILE_SRC
+      script.async = true
+      script.defer = true
+      document.head.appendChild(script)
+    }
+    script.addEventListener('load', render)
+    return () => script?.removeEventListener('load', render)
+  }, [armed])
+
+  // widget sa nacitava az od prveho vstupu, takze pri rychlom odoslani
+  // token este nemusi byt hotovy - chvilu naň pockame
+  async function waitForToken(timeoutMs = 10000): Promise<string> {
+    const deadline = Date.now() + timeoutMs
+    for (;;) {
+      const id = widgetId.current
+      const token = id && window.turnstile ? window.turnstile.getResponse(id) : undefined
+      if (token) return token
+      if (Date.now() > deadline) return ''
+      await new Promise((r) => setTimeout(r, 200))
+    }
+  }
+
+  async function handleSubmit(e: FormEvent<HTMLFormElement>) {
     e.preventDefault()
-    const endpoint = import.meta.env.VITE_FORMSPREE_ENDPOINT as string | undefined
-    if (endpoint) {
-      await fetch(endpoint, {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json', Accept: 'application/json' },
-        body: JSON.stringify(form),
-      })
-    } else {
-      // docasny fallback bez backendu: otvori e-mail s predvyplnenou spravou
+
+    // bez Turnstile kluca by backend spravu odmietol - otvorime predvyplneny e-mail
+    if (!TURNSTILE_SITE_KEY) {
       const body = `Meno: ${form.name}\nE-mail: ${form.email}\nKategória: ${form.category}\n\n${form.message}`
-      window.location.href = `mailto:info@slovan-bratislava.com?subject=${encodeURIComponent(
+      window.location.href = `mailto:${CLUB_EMAIL}?subject=${encodeURIComponent(
         'Prihláška / správa z webu',
       )}&body=${encodeURIComponent(body)}`
+      setSubmitted(true)
+      return
     }
-    setSubmitted(true)
+
+    // FormData citame synchronne - po await uz e.currentTarget nie je dostupny
+    const data = new FormData(e.currentTarget)
+
+    setSending(true)
+    setError(null)
+
+    const token = await waitForToken()
+    if (!token) {
+      setError(ERRORS.turnstile_missing)
+      setSending(false)
+      return
+    }
+    data.set('cf-turnstile-response', token)
+
+    try {
+      const res = await fetch(ENDPOINT, { method: 'POST', body: data })
+      const result = (await res.text()).trim()
+      if (result === 'success') {
+        setSubmitted(true)
+        setForm(EMPTY_FORM)
+      } else {
+        setError(ERRORS[result] ?? `Správu sa nepodarilo odoslať. Napíšte nám prosím na ${CLUB_EMAIL}.`)
+      }
+    } catch {
+      setError(`Správu sa nepodarilo odoslať. Napíšte nám prosím na ${CLUB_EMAIL}.`)
+    } finally {
+      setSending(false)
+      window.turnstile?.reset(widgetId.current ?? undefined)
+    }
   }
 
   return (
@@ -70,9 +168,7 @@ export default function Contact() {
               <span className="text-xl">📘</span>
               <div>
                 <div className="font-bold text-navy">Facebook</div>
-                <a href={CLUB_FACEBOOK_URL} target="_blank" rel="noreferrer" className="text-blue hover:text-blue-dark">
-                  facebook.com/Slovanchess
-                </a>
+                <FacebookLink className="text-blue hover:text-blue-dark">facebook.com/Slovanchess</FacebookLink>
               </div>
             </div>
           </div>
@@ -92,13 +188,18 @@ export default function Contact() {
               </button>
             </div>
           ) : (
-            <form onSubmit={handleSubmit} className="flex flex-col gap-4">
+            <form
+              onSubmit={handleSubmit}
+              onChange={() => setArmed(true)}
+              className="flex flex-col gap-4"
+            >
               <div className="grid grid-cols-1 gap-3.5 sm:grid-cols-2">
                 <label className="flex flex-col gap-1.5 text-sm font-bold text-navy">
                   Meno a priezvisko
                   <input
                     required
                     type="text"
+                    name="name"
                     placeholder="Ján Novák"
                     value={form.name}
                     onChange={(e) => setForm({ ...form, name: e.target.value })}
@@ -110,6 +211,7 @@ export default function Contact() {
                   <input
                     required
                     type="email"
+                    name="email"
                     placeholder="jan@email.sk"
                     value={form.email}
                     onChange={(e) => setForm({ ...form, email: e.target.value })}
@@ -120,6 +222,7 @@ export default function Contact() {
               <label className="flex flex-col gap-1.5 text-sm font-bold text-navy">
                 Úroveň / kategória
                 <select
+                  name="package"
                   value={form.category}
                   onChange={(e) => setForm({ ...form, category: e.target.value })}
                   className={`${inputCls} bg-white`}
@@ -134,17 +237,36 @@ export default function Contact() {
                 Správa
                 <textarea
                   rows={4}
+                  name="message"
                   placeholder="Chcem sa prísť pozrieť na tréning…"
                   value={form.message}
                   onChange={(e) => setForm({ ...form, message: e.target.value })}
                   className={`${inputCls} resize-y`}
                 />
               </label>
+
+              <input type="hidden" name="subject" value="Prihláška / správa z webu" />
+              {/* honeypot - skryte pole, ktore vyplnia len roboty (kontroluje contactForm.php) */}
+              <input
+                type="text"
+                name="website"
+                tabIndex={-1}
+                autoComplete="off"
+                aria-hidden="true"
+                className="absolute left-[-9999px] h-0 w-0 opacity-0"
+              />
+              {TURNSTILE_SITE_KEY && armed && <div ref={widgetBox} />}
+
+              {error && (
+                <p className="rounded-lg bg-red/10 px-3.5 py-2.5 text-sm font-semibold text-red">{error}</p>
+              )}
+
               <button
                 type="submit"
-                className="rounded-xl bg-red py-3.5 font-condensed text-lg font-bold uppercase tracking-wide text-white hover:bg-[#b81824]"
+                disabled={sending}
+                className="rounded-xl bg-red py-3.5 font-condensed text-lg font-bold uppercase tracking-wide text-white hover:bg-[#b81824] disabled:cursor-not-allowed disabled:opacity-60"
               >
-                Odoslať prihlášku
+                {sending ? 'Odosielam…' : 'Odoslať'}
               </button>
             </form>
           )}

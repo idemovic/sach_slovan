@@ -144,8 +144,29 @@ tools/             fetch-players.mjs (supiska), fetch-standings.mjs (vysledky dr
 
 ## Kontaktny formular
 
-Bez konfiguracie formular otvori predvyplneny e-mail (mailto). Pre odosielanie
-cez Formspree nastavte pri builde premennu `VITE_FORMSPREE_ENDPOINT`.
+Formular odosiela POST na `/php/contactForm.php` (PHP + PHPMailer, zdroj je
+v `public/php/`, pri builde sa skopiruje do `dist/php/`). Chrani ho skryte pole
+(honeypot) a Cloudflare Turnstile. Hosting teda musi vediet PHP.
+
+Turnstile sa nacita az vtedy, ked navstevnik zacne formular vyplnat - kto ho
+nepouzije, neposiela na Cloudflare ziadnu poziadavku. Ak niekto odosle formular
+skor, nez je overenie hotove, odosielanie na token chvilu pocka (max 10 s).
+
+Nastavenie - skopirujte [.env.example](.env.example) ako `.env` a vyplnte:
+
+- `VITE_TURNSTILE_SITE_KEY` - verejny kluc widgetu; cita ho Vite pri builde.
+  Kym nie je vyplneny, formular sa sprava ako predtym: otvori predvyplneny
+  e-mail (mailto), lebo backend by spravu bez overenia aj tak odmietol.
+- sekcie `[cloudflare_turnstile]`, `[smtp_settings]`, `[email_settings]` -
+  cita ich contactForm.php. Premenne bez prefixu `VITE_` sa do JS buildu
+  nedostanu, takze SMTP heslo neunikne do prehliadaca.
+
+POZOR pri nasadeni: contactForm.php cita `.env` cez `__DIR__/../../.env`, teda
+o uroven vyssie ako korenovy adresar webu. `.env` NIKDY nekopirujte do `dist/`
+(Apache by ho poslal ako text aj s heslom); `.htaccess` ma na to este poistku.
+
+Odpovede skriptu (`success`, `invalid_input`, `turnstile_*`, `spam`,
+`mail_failed`) formular prekladá na hlasku pre navstevnika.
 
 ## TODO pred spustenim
 

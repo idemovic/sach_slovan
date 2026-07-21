@@ -1,4 +1,5 @@
 import { Link } from 'react-router-dom'
+import { CLUB_PORTAL_URL } from '../../lib/club'
 import playersData from '../../../content/data/players.json'
 
 // Zdroje: 1891 - Historia.pdf (Bratislavsky sachovy klub, predchodca Slovana);
@@ -39,12 +40,14 @@ export default function Hero() {
             >
               Pridaj sa ku klubu →
             </Link>
-            <Link
-              to="/#tim"
+            <a
+              href={CLUB_PORTAL_URL}
+              target="_blank"
+              rel="noreferrer"
               className="inline-flex items-center gap-2.5 rounded-lg border-[1.5px] border-white/30 px-7 py-4 font-condensed text-lg font-bold uppercase tracking-wide text-white hover:border-white/60"
             >
-              Náš tím
-            </Link>
+              Klubová zóna
+            </a>
           </div>
         </div>
         <div className="hidden justify-center md:flex animate-float-in-slow">
