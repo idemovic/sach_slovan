@@ -29,6 +29,7 @@ frontend/.env
 frontend/.env.local
 !.env.deploy.example
 !.env.example
+!.env.slovan.example
 
 ## OS
 .DS_Store

@@ -152,18 +152,59 @@ Turnstile sa nacita az vtedy, ked navstevnik zacne formular vyplnat - kto ho
 nepouzije, neposiela na Cloudflare ziadnu poziadavku. Ak niekto odosle formular
 skor, nez je overenie hotove, odosielanie na token chvilu pocka (max 10 s).
 
-Nastavenie - skopirujte [.env.example](.env.example) ako `.env` a vyplnte:
+Nastavenie je v DVOCH samostatnych suboroch - kazdy ma iny format:
 
-- `VITE_TURNSTILE_SITE_KEY` - verejny kluc widgetu; cita ho Vite pri builde.
-  Kym nie je vyplneny, formular sa sprava ako predtym: otvori predvyplneny
-  e-mail (mailto), lebo backend by spravu bez overenia aj tak odmietol.
-- sekcie `[cloudflare_turnstile]`, `[smtp_settings]`, `[email_settings]` -
-  cita ich contactForm.php. Premenne bez prefixu `VITE_` sa do JS buildu
-  nedostanu, takze SMTP heslo neunikne do prehliadaca.
+1. `.env` (vzor [.env.example](.env.example)) - cita ho Vite pri builde.
+   Patri sem iba `VITE_TURNSTILE_SITE_KEY`, teda verejny kluc widgetu. Kym nie
+   je vyplneny, formular sa sprava ako predtym: otvori predvyplneny e-mail
+   (mailto), lebo backend by spravu bez overenia aj tak odmietol.
+   Format je dotenv - komentare zacinaju `#`.
+2. `.env.slovan` (vzor [.env.slovan.example](.env.slovan.example)) - cita ho
+   contactForm.php cez `parse_ini_file()`. Su v nom sekcie
+   `[cloudflare_turnstile]`, `[smtp_settings]` a `[email_settings]`.
+   Vite tento subor vobec nenacitava, takze SMTP heslo sa nema ako dostat
+   do JS buildu.
 
-POZOR pri nasadeni: contactForm.php cita `.env` cez `__DIR__/../../.env`, teda
-o uroven vyssie ako korenovy adresar webu. `.env` NIKDY nekopirujte do `dist/`
-(Apache by ho poslal ako text aj s heslom); `.htaccess` ma na to este poistku.
+POZOR na format `.env.slovan` - je to INI pre PHP, nie dotenv:
+
+- komentare musia zacinat `;`. PHP od verzie 5.3 znak `#` ako komentar neberie,
+  takze taky riadok sa parsuje ako data.
+- hodnoty davajte do uvodzoviek. Neuzavrety znak ako `( ) { } | & ! ? ~`
+  sposobi chybu parsovania.
+
+Ak sa subor neda precitat ALEBO sa neda rozparsovat, skript vrati
+`config_missing` - obe pripady vyzeraju rovnako, takze pri tejto hlaske
+skontrolujte aj format, nielen ci subor existuje. Rychla kontrola:
+
+```
+php -r "var_dump(parse_ini_file('.env.slovan', true));"
+```
+
+POZOR pri nasadeni: contactForm.php hlada `.env.slovan` o uroven vyssie nad
+korenovym adresarom webu (skusa `../../` aj `../../../` od `php/`). Subor NIKDY
+nekopirujte do `dist/` (Apache by ho poslal ako text aj s heslom); `.htaccess`
+ma na to este poistku.
+
+PO KAZDEJ ZMENE `VITE_TURNSTILE_SITE_KEY` TREBA ZNOVA SPUSTIT `npm run build`.
+Vite zapeka `VITE_` premenne do JS uz pri builde - ak kluc pri builde chybal,
+v bundli zostane iba mailto vetva a volanie na PHP z neho vypadne uplne
+(kontrola: `grep contactForm.php dist/assets/*.js` musi nieco najst).
+
+### Lokalne testovanie formulara
+
+`npm run dev` uz PHP zvlada: popri Vite sa automaticky spusti vstavany PHP server
+(`php -S` nad priecinkom `public/`) a poziadavky na `/php/*` sa nan preposielaju
+(nastavene vo [vite.config.ts](vite.config.ts)). Staci mat `php` v PATH - ak chyba,
+Vite to len ohlasi a zvysok webu funguje dalej. Ak uz na porte 8890 nieco bezi,
+pouzije sa to a novy proces sa nespusta.
+
+`npm run preview` PHP NEspusta - tam sa `/php/contactForm.php` vrati ako obycajny
+text (zdrojak skriptu) a formular vypise vseobecnu chybu.
+
+Na uspesne odoslanie treba lokalne aj spravne kluce: Turnstile kluc je viazany na
+domenu, takze medzi povolene hostname v Cloudflare dashboarde treba pridat
+`localhost`. Ak `.env.slovan` nema vyplneny `secret_key`, skript vrati
+`turnstile_error` (Cloudflare na prazdny/nespravny secret odpoveda HTTP 400).
 
 Odpovede skriptu (`success`, `invalid_input`, `turnstile_*`, `spam`,
 `mail_failed`) formular prekladá na hlasku pre navstevnika.

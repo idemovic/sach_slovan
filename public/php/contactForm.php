@@ -5,7 +5,21 @@ require 'PHPMailer/SMTP.php';
 
 use PHPMailer\PHPMailer\PHPMailer;
 
-$config = parse_ini_file(__DIR__ . '/../../.env', true);
+/* CONFIG - dev: docroot public/, config in repo root (../../)
+   prod: docroot dist/, config one level above webroot (../../../) */
+$config = false;
+
+foreach (['/../../.env.slovan', '/../../../.env.slovan'] as $candidate) {
+    if (is_readable(__DIR__ . $candidate)) {
+        $config = parse_ini_file(__DIR__ . $candidate, true);
+        break;
+    }
+}
+
+if (!$config) {
+    echo "config_missing";
+    exit;
+}
 
 /* HONEYPOT CHECK */
 if (!empty($_POST['website'] ?? '')) {
@@ -88,13 +102,13 @@ try {
     $mail->isHTML(false);
     $mail->CharSet  = PHPMailer::CHARSET_UTF8;
     $mail->Encoding = PHPMailer::ENCODING_BASE64;
-    $mail->Subject = "[Contact] " . $subject;
+    $mail->Subject = $subject;
 
     $mail->Body =
-        "Name: $name\n" .
+        "Meno: $name\n" .
         "Email: $email\n" .
-        ($package ? "Package: $package\n" : "") .
-        "\nMessage:\n$message";
+        ($package ? "Úroveň: $package\n" : "") .
+        "\nSpráva:\n$message";
 
     $mail->send();
 
