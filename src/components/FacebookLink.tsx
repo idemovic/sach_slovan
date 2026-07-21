@@ -7,28 +7,26 @@ import { CLUB_FACEBOOK_PAGE_ID, CLUB_FACEBOOK_URL } from '../lib/club'
 //   iOS     - fb://profile/<id>; fb://page/... v novsich verziach appky nefunguje.
 //             Ak appka chyba, po timeoute posleme uzivatela na web.
 //
-//   Android - appke posleme priamo jej vlastnu https adresu s explicitnym
-//             balickom (package=com.facebook.katana). Appka ju spracuje rovnakou
-//             cestou ako App Link, takze otvori konkretnu stranku.
-//             Schemu fb://page/<id> sme skusali predtym: novsie verzie appky ju
-//             prijmu, ale otvoria len uvodnu obrazovku namiesto stranky.
-//             Ak by prestala fungovat aj tato cesta, dalsie varianty na skusanie:
-//               fb://facewebmodal/f?href=<url-encoded https adresa>
-//               fb://page/?id=<id>          (niektore verzie)
-//               fb://profile/<id>           (ako na iOS)
+//   Android - fb://page/<id> zabalene do intent://. Overene na zariadeni:
+//             appka otvori priamo stranku klubu.
 //             Chrome pri chybajucej appke sam prejde na browser_fallback_url,
 //             takze netreba vlastny timeout ani nehrozi ERR_UNKNOWN_URL_SCHEME.
+//             Ak by to niekedy prestalo fungovat, dalsie varianty na skusanie:
+//               fb://facewebmodal/f?href=<url-encoded https adresa>
+//               fb://page/?id=<id>
+//               fb://profile/<id>         (ako na iOS)
+//             Pozor: zmenu treba vzdy znova zbuildovat a nasadit - stary bundle
+//             si drzi stary odkaz a vyzera to, akoby oprava nefungovala.
 function deepLink(): { url: string; needsFallback: boolean } | null {
   const ua = navigator.userAgent
   if (/iPad|iPhone|iPod/.test(ua)) {
     return { url: `fb://profile/${CLUB_FACEBOOK_PAGE_ID}`, needsFallback: true }
   }
   if (/Android/.test(ua)) {
-    const { host, pathname } = new URL(CLUB_FACEBOOK_URL)
     const fallback = encodeURIComponent(CLUB_FACEBOOK_URL)
     return {
       url:
-        `intent://${host}${pathname}#Intent;scheme=https;` +
+        `intent://page/${CLUB_FACEBOOK_PAGE_ID}#Intent;scheme=fb;` +
         `package=com.facebook.katana;S.browser_fallback_url=${fallback};end`,
       needsFallback: false,
     }
