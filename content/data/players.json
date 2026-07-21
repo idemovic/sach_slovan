@@ -1,5 +1,5 @@
 {
-  "updated": "2026-07-15",
+  "updated": "2026-07-21",
   "source": "matrika SŠZ (chess.sk)",
   "club": "ŠK Slovan Bratislava",
   "players": [
@@ -149,13 +149,6 @@
       "elo": 2073,
       "fideId": "14901340",
       "sszId": "159"
-    },
-    {
-      "name": "Michal Ač",
-      "title": null,
-      "elo": 2038,
-      "fideId": "14900319",
-      "sszId": "94"
     },
     {
       "name": "Marek Kolčák",
@@ -424,13 +417,6 @@
       "sszId": "1233"
     },
     {
-      "name": "Štefan Kovačič",
-      "title": null,
-      "elo": 1782,
-      "fideId": "14913720",
-      "sszId": "125"
-    },
-    {
       "name": "Gustav Šturc",
       "title": null,
       "elo": 1774,
@@ -459,13 +445,6 @@
       "sszId": "8476"
     },
     {
-      "name": "Michal Hozlár",
-      "title": null,
-      "elo": 1747,
-      "fideId": "14977516",
-      "sszId": "11070"
-    },
-    {
       "name": "Jozef Antal",
       "title": null,
       "elo": 1735,
@@ -485,13 +464,6 @@
       "elo": 1719,
       "fideId": "14977281",
       "sszId": "11045"
-    },
-    {
-      "name": "Zita Beňová",
-      "title": null,
-      "elo": 1714,
-      "fideId": "14906686",
-      "sszId": "97"
     },
     {
       "name": "Jakub Artner",
@@ -599,13 +571,6 @@
       "sszId": "4404"
     },
     {
-      "name": "Pavol Greppel",
-      "title": null,
-      "elo": 1605,
-      "fideId": "14935848",
-      "sszId": "112"
-    },
-    {
       "name": "Dávid Siviček",
       "title": null,
       "elo": 1601,
@@ -625,13 +590,6 @@
       "elo": 1594,
       "fideId": "14949040",
       "sszId": "8278"
-    },
-    {
-      "name": "Davide Camilleri",
-      "title": null,
-      "elo": 1591,
-      "fideId": "14985004",
-      "sszId": "11807"
     },
     {
       "name": "Arthur Sredau",
@@ -697,13 +655,6 @@
       "sszId": "11721"
     },
     {
-      "name": "Sofia Šolonyová",
-      "title": null,
-      "elo": 1557,
-      "fideId": "14987570",
-      "sszId": "12062"
-    },
-    {
       "name": "Teo Trávniček",
       "title": null,
       "elo": 1555,
@@ -725,13 +676,6 @@
       "sszId": "8111"
     },
     {
-      "name": "Vladimír Kostelka",
-      "title": null,
-      "elo": 1546,
-      "fideId": "14981793",
-      "sszId": "11486"
-    },
-    {
       "name": "Michal Vatrál",
       "title": null,
       "elo": 1545,
@@ -744,13 +688,6 @@
       "elo": 1542,
       "fideId": "549003852",
       "sszId": "13706"
-    },
-    {
-      "name": "Peter Filípek",
-      "title": null,
-      "elo": 1538,
-      "fideId": "14953340",
-      "sszId": "8632"
     },
     {
       "name": "Naďa Janíčková",
@@ -793,13 +730,6 @@
       "elo": 1506,
       "fideId": "14975491",
       "sszId": "10865"
-    },
-    {
-      "name": "Michal Šimon Hradský",
-      "title": null,
-      "elo": 1497,
-      "fideId": "14994186",
-      "sszId": "12733"
     },
     {
       "name": "Filip Ronaj",
@@ -900,13 +830,6 @@
       "sszId": "13202"
     },
     {
-      "name": "Dominik Šatka",
-      "title": null,
-      "elo": 1070,
-      "fideId": "14997240",
-      "sszId": "13044"
-    },
-    {
       "name": "Ruslan Behun",
       "title": null,
       "elo": 1000,
@@ -926,13 +849,6 @@
       "elo": 1000,
       "fideId": "549008242",
       "sszId": "14147"
-    },
-    {
-      "name": "Daniel Jonatan Cibulka",
-      "title": null,
-      "elo": 1000,
-      "fideId": "14993643",
-      "sszId": "12681"
     },
     {
       "name": "Jaroslav Dancák",
@@ -963,13 +879,6 @@
       "sszId": "13460"
     },
     {
-      "name": "Andrii Gladun",
-      "title": null,
-      "elo": 1000,
-      "fideId": "14997886",
-      "sszId": "13124"
-    },
-    {
       "name": "Adam Hargaš",
       "title": null,
       "elo": 1000,
@@ -982,13 +891,6 @@
       "elo": 1000,
       "fideId": "549002880",
       "sszId": "13612"
-    },
-    {
-      "name": "Erik Hudák",
-      "title": null,
-      "elo": 1000,
-      "fideId": "14993716",
-      "sszId": "12679"
     },
     {
       "name": "Alexandra Jurdíková",
@@ -1057,7 +959,7 @@
       "name": "Ján Maruniak",
       "title": null,
       "elo": 1000,
-      "fideId": "0",
+      "fideId": "549009060",
       "sszId": "14285"
     },
     {
@@ -1066,27 +968,6 @@
       "elo": 1000,
       "fideId": "549001140",
       "sszId": "13431"
-    },
-    {
-      "name": "Adejo Opeoluwa",
-      "title": null,
-      "elo": 1000,
-      "fideId": "14993082",
-      "sszId": "12623"
-    },
-    {
-      "name": "Samuel Osuský",
-      "title": null,
-      "elo": 1000,
-      "fideId": "549001361",
-      "sszId": "13458"
-    },
-    {
-      "name": "David Rosík",
-      "title": null,
-      "elo": 1000,
-      "fideId": "549000896",
-      "sszId": "13407"
     },
     {
       "name": "Karolína Šefcová",

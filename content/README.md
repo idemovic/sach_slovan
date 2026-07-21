@@ -75,10 +75,11 @@ v `public/files/Osobnosti/`.
 
 ## Data (data/)
 
-- `players.json` - supiska klubu. NEUPRAVUJTE RUCNE - subor generuje prikaz
-  `npm run fetch:players`, ktory stiahne aktualnych hracov Slovana z matriky
-  SSZ (chess.sk) aj s ratingami a FIDE ID. Spustit pri kazdej zmene supisky
-  alebo novom ratingovom rebricku.
+- `players.json` - supiska klubu (len clenovia so zaplatenym clenskym).
+  NEUPRAVUJTE RUCNE - subor generuje prikaz `npm run fetch:players`, ktory stiahne
+  aktualnych hracov Slovana z matriky SSZ (chess.sk) aj s ratingami a FIDE ID a
+  vynecha clenov s nezaplatenym clenskym. Spustit pri kazdej zmene supisky,
+  novom ratingovom rebricku alebo po uhradeni clenskeho.
 - `team-a.json` - supiska A-timu (extraliga). UPRAVUJE SA RUCNE, rovnaky format
   ako players.json. Moze obsahovat aj hostujucich hracov, ktori nie su clenmi
   klubu - preto sa negeneruje z matriky (`sszId` vtedy mozno vynechat).

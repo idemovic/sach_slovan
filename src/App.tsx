@@ -8,6 +8,7 @@ import NewsPost from './pages/NewsPost'
 import History from './pages/History'
 import Personality from './pages/Personality'
 import Results from './pages/Results'
+import Leadership from './pages/Leadership'
 import Archive from './pages/Archive'
 import Documents from './pages/Documents'
 
@@ -51,6 +52,7 @@ export default function App() {
           <Route path="/history" element={<History />} />
           <Route path="/history/:slug" element={<Personality />} />
           <Route path="/vysledky" element={<Results />} />
+          <Route path="/vedenie" element={<Leadership />} />
           <Route path="/archive" element={<Archive />} />
           <Route path="/documents" element={<Documents />} />
           <Route path="*" element={<NotFound />} />

@@ -8,5 +8,15 @@ RewriteCond %{REQUEST_FILENAME} !-f
 RewriteCond %{REQUEST_FILENAME} !-d
 RewriteRule . /index.html [L]
 
+# HTML no-cache
+#--------------
+<IfModule mod_headers.c>
+  <FilesMatch "\.html$">
+    Header set Cache-Control "no-cache, must-revalidate"
+    Header set Pragma "no-cache"
+    Header set Expires "0"
+  </FilesMatch>
+</IfModule>
+
 # Sem neskor pribudnu redirecty zo starych URL (PLAN.md sekcia 6, krok 8),
 # napr.: Redirect 301 /sitemap.html /archive

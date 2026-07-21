@@ -40,7 +40,7 @@ export default function Header() {
             rel="noreferrer"
             className="whitespace-nowrap rounded-md border border-white/30 px-4 py-2.5 font-condensed text-[15px] font-bold uppercase tracking-wide text-white hover:border-white/60"
           >
-            Prihlásenie
+            Klubová zóna
           </a>
           <Link
             to="/#kontakt"
@@ -79,7 +79,7 @@ export default function Header() {
               onClick={() => setOpen(false)}
               className="mt-2 rounded-md border border-white/30 px-4 py-3 text-center font-condensed text-base font-bold uppercase tracking-wide text-white"
             >
-              Prihlásenie
+              Klubová zóna
             </a>
             <Link
               to="/#kontakt"

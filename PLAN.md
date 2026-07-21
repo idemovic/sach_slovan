@@ -45,7 +45,7 @@ Structure pulled from its `sitemap.html`:
 | Nazov, logo, historia klubu (Historia.pdf) | Hero + sekcia "O klube" |
 | Adresa a mapy (Adresa.pdf) | Sekcia "Kontakt" |
 | Klubove stvrtky | "Kontakt" (klubove vecery) + "Kalendar" (opakujuca sa udalost) |
-| Vedenie klubu (Vedenie.pdf) | "O klube" alebo "Kontakt" |
+| Vedenie klubu (Vedenie.pdf) | hotovo - podstranka /vedenie (odkaz v patke) |
 | 2% z dane | Banner/notice na homepage (sezonna kampan, stale relevantna na Slovensku) |
 | Zoznam clenov (Clenovia.pdf) | Zdroj pre realne cislo v hero statistikach |
 
@@ -87,6 +87,7 @@ Structure pulled from its `sitemap.html`:
 /history     Historia klubu + Galeria osobnosti (8 profilov v novom vizuale)
 /vysledky    Vysledky druzstiev za sezonu (konecne umiestnenie A/B/C... v ligach,
              medaila za umiestnenie do 3. miesta) - z content/data/standings.json
+/vedenie     Vedenie klubu (vykonny vybor + kontrolor) - z Vedenie.pdf; odkaz iba v patke
 /archive     Turnajovy archiv - tabulka rocnikov s linkami na PDF / chess-results
              + ligy 1969-2013 + partie
 /documents   Stanovy, formulare pre organizatorov, pravidla (linky na aktualne FIDE)

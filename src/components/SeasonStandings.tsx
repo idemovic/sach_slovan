@@ -17,10 +17,25 @@ function plural(n: number, one: string, few: string, many: string): string {
   return many
 }
 
-const PODIUM: Record<number, { medal: string; badge: string; accent: string }> = {
-  1: { medal: '🥇', badge: 'bg-amber-100', accent: 'border-amber-300 bg-amber-50' },
-  2: { medal: '🥈', badge: 'bg-slate-200', accent: 'border-slate-300 bg-slate-50' },
-  3: { medal: '🥉', badge: 'bg-orange-100', accent: 'border-orange-200 bg-orange-50' },
+const PODIUM: Record<number, { medal: string; card: string; badge: string; rankText: string }> = {
+  1: {
+    medal: '🥇',
+    card: 'border-amber-300 bg-gradient-to-br from-amber-100 to-white ring-2 ring-amber-400/70 shadow-md',
+    badge: 'bg-amber-200',
+    rankText: 'text-amber-600',
+  },
+  2: {
+    medal: '🥈',
+    card: 'border-slate-400 bg-gradient-to-br from-slate-300 to-white ring-2 ring-slate-400 shadow-md',
+    badge: 'bg-slate-300',
+    rankText: 'text-slate-600',
+  },
+  3: {
+    medal: '🥉',
+    card: 'border-orange-300 bg-gradient-to-br from-orange-100 to-white ring-2 ring-orange-300/70 shadow-md',
+    badge: 'bg-orange-200',
+    rankText: 'text-orange-700',
+  },
 }
 
 export default function SeasonStandings() {
@@ -52,26 +67,36 @@ export default function SeasonStandings() {
               href={s.url}
               target="_blank"
               rel="noreferrer"
-              className={`flex items-center gap-4 rounded-xl border p-4 pr-5 shadow-sm transition hover:-translate-y-0.5 hover:shadow-md ${
-                p ? p.accent : 'border-slate-200 bg-white'
+              className={`flex items-center gap-4 rounded-xl border p-4 pr-5 transition hover:-translate-y-0.5 ${
+                p ? `${p.card} hover:shadow-lg` : 'border-slate-200 bg-white shadow-sm hover:shadow-md'
               }`}
             >
-              <div className={`grid h-12 w-12 shrink-0 place-items-center rounded-full ${p ? p.badge : 'bg-mist'}`}>
+              <div
+                className={`grid shrink-0 place-items-center rounded-full ${
+                  p ? `h-14 w-14 ${p.badge}` : 'h-12 w-12 bg-mist'
+                }`}
+              >
                 {p ? (
-                  <span className="text-2xl leading-none">{p.medal}</span>
+                  <span className="text-3xl leading-none">{p.medal}</span>
                 ) : (
                   <span className="font-condensed text-xl font-bold text-slate-500">{s.rank}</span>
                 )}
               </div>
               <div className="min-w-0 flex-1">
                 <div className="font-condensed text-lg font-bold uppercase leading-tight text-navy">{s.league}</div>
-                <div className="text-sm font-semibold text-slate-500">
-                  {teamLabel(s.team)}
-                  {s.rank === 1 && <span className="text-amber-600"> · majster ligy</span>}
+                <div className="mt-0.5 flex flex-wrap items-center gap-x-2 gap-y-1 text-sm font-semibold text-slate-500">
+                  <span>{teamLabel(s.team)}</span>
+                  {s.rank === 1 && (
+                    <span className="inline-flex items-center gap-1 rounded bg-amber-400 px-2 py-0.5 font-condensed text-[12px] font-bold uppercase tracking-wide text-amber-950">
+                      🏆 Majster ligy
+                    </span>
+                  )}
                 </div>
               </div>
               <div className="shrink-0 text-right">
-                <div className="font-condensed text-2xl font-extrabold leading-none text-navy">{s.rank}.</div>
+                <div className={`font-condensed font-extrabold leading-none ${p ? `text-3xl ${p.rankText}` : 'text-2xl text-navy'}`}>
+                  {s.rank}.
+                </div>
                 <div className="text-xs font-semibold text-slate-400">z {s.teams}</div>
               </div>
             </a>

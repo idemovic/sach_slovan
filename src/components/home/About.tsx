@@ -15,8 +15,8 @@ export default function About() {
             Tradícia, ktorá ťahá za jeden koniec
           </h2>
           <p className="mt-5 text-[17px] leading-relaxed text-slate-600">
-            Sme jeden z najstarších a najúspešnejších šachových klubov na Slovensku. Naša prvá aj
-            mládežnícke družstvá pravidelne bojujú o najvyššie priečky slovenskej extraligy a hráči
+            Sme jeden z najstarších a najúspešnejších šachových klubov na Slovensku. Naše prvé družstvo aj
+            tie mládežnícke pravidelne bojujú o najvyššie priečky slovenských líg a hráči
             klubu reprezentujú krajinu na medzinárodných podujatiach.
           </p>
           <p className="mt-3.5 text-[17px] leading-relaxed text-slate-600">

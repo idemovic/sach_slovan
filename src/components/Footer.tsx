@@ -26,6 +26,7 @@ export default function Footer() {
             <Link to="/vysledky" className="text-slate-300 hover:text-white">Výsledky</Link>
             <Link to="/news" className="text-slate-300 hover:text-white">Novinky</Link>
             <Link to="/history" className="text-slate-300 hover:text-white">História</Link>
+            <Link to="/vedenie" className="text-slate-300 hover:text-white">Vedenie klubu</Link>
             <Link to="/archive" className="text-slate-300 hover:text-white">Archív</Link>
             <Link to="/documents" className="text-slate-300 hover:text-white">Dokumenty</Link>
           </div>

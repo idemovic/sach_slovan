@@ -82,7 +82,9 @@ npm run fetch:players
 Skript `tools/fetch-players.mjs` stiahne z matriky SSZ (chess.sk) CSV export
 hracov filtrovany na klub "ŠK Slovan Bratislava", vytiahne meno, FIDE titul,
 rating a FIDE ID a zapise ich do `content/data/players.json` aj s datumom stavu.
-Subor NEUPRAVUJTE rucne - dalsi beh skriptu ho prepise.
+Na web davame len clenov so zaplatenym clenskym - export ma v poslednom stlpci
+aktualne clenske (suma v EUR = zaplatene, prazdne / "**" = nezaplatene), takze
+nezaplateni clenovia sa vynechavaju. Subor NEUPRAVUJTE rucne - dalsi beh ho prepise.
 
 Web zobrazuje supisku A-timu ako karty a kompletnu supisku klubu
 v rozbalovacej tabulke, s odkazmi na FIDE profily.
@@ -136,7 +138,7 @@ reference/         povodne demo dizajnu - len ako vizualna predloha
 src/
   components/      Header, Footer, Lightbox, PostCard, sekcie homepage
   lib/             news.ts, events.ts, personalities.ts, markdown.ts (nacitanie obsahu)
-  pages/           Home, NewsList, NewsPost, History, Personality, Results, Archive, Documents
+  pages/           Home, NewsList, NewsPost, History, Personality, Results, Leadership, Archive, Documents
 tools/             fetch-players.mjs (supiska), fetch-standings.mjs (vysledky druzstiev)
 ```
 
