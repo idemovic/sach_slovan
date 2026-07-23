@@ -1,4 +1,4 @@
-import { useEffect, useRef, useState, type FormEvent } from 'react'
+import { useCallback, useEffect, useRef, useState, type FormEvent } from 'react'
 import { CLUB_ADDRESS, CLUB_EMAIL, CLUB_MAPS_URL } from '../../lib/club'
 import FacebookLink from '../FacebookLink'
 
@@ -18,6 +18,7 @@ declare global {
       render: (el: HTMLElement, opts: { sitekey: string }) => string
       getResponse: (id?: string) => string | undefined
       reset: (id?: string) => void
+      remove: (id?: string) => void
     }
   }
 }
@@ -41,19 +42,38 @@ export default function Contact() {
   // Turnstile nacitavame az ked navstevnik zacne formular vyplnat - kto ho
   // nepouzije, neposiela na Cloudflare ziadnu poziadavku.
   const [armed, setArmed] = useState(false)
-  const widgetBox = useRef<HTMLDivElement>(null)
+  const boxRef = useRef<HTMLDivElement | null>(null)
   const widgetId = useRef<string | null>(null)
 
-  // Turnstile vykreslujeme explicitne - implicitne (data-sitekey) sa v SPA
-  // nespusti, ak sa komponent pripoji az po nacitani skriptu.
+  // Vykresli widget do aktualneho kontajnera, ak este nie je a skript je nacitany.
+  // Explicitne render() - implicitny (data-sitekey) sa v SPA nemusi spustit.
+  const renderWidget = useCallback(() => {
+    if (!TURNSTILE_SITE_KEY || !boxRef.current || !window.turnstile || widgetId.current !== null) return
+    widgetId.current = window.turnstile.render(boxRef.current, { sitekey: TURNSTILE_SITE_KEY })
+  }, [])
+
+  // Callback ref: kontajner sa po odoslani (obrazovka "Dakujeme") odmontuje a pri
+  // dalsej sprave znova pripoji. Token je jednorazovy, preto pri kazdom pripojeni
+  // vykreslime cerstvy widget a pri odmontovani ho odstranime - inak by widgetId
+  // ukazoval na uz neexistujuci widget a druhe odoslanie by zlyhalo.
+  const attachWidget = useCallback(
+    (node: HTMLDivElement | null) => {
+      if (node) {
+        boxRef.current = node
+        renderWidget()
+      } else {
+        if (widgetId.current && window.turnstile) window.turnstile.remove(widgetId.current)
+        widgetId.current = null
+        boxRef.current = null
+      }
+    },
+    [renderWidget],
+  )
+
+  // skript nacitame az po armed; ked dobehne, vykresli widget (ak uz je pripojeny)
   useEffect(() => {
-    if (!TURNSTILE_SITE_KEY || !armed) return
-    const render = () => {
-      if (!widgetBox.current || widgetId.current !== null || !window.turnstile) return
-      widgetId.current = window.turnstile.render(widgetBox.current, { sitekey: TURNSTILE_SITE_KEY })
-    }
-    if (window.turnstile) {
-      render()
+    if (!TURNSTILE_SITE_KEY || !armed || window.turnstile) {
+      renderWidget()
       return
     }
     let script = document.querySelector<HTMLScriptElement>(`script[src="${TURNSTILE_SRC}"]`)
@@ -64,9 +84,9 @@ export default function Contact() {
       script.defer = true
       document.head.appendChild(script)
     }
-    script.addEventListener('load', render)
-    return () => script?.removeEventListener('load', render)
-  }, [armed])
+    script.addEventListener('load', renderWidget)
+    return () => script?.removeEventListener('load', renderWidget)
+  }, [armed, renderWidget])
 
   // widget sa nacitava az od prveho vstupu, takze pri rychlom odoslani
   // token este nemusi byt hotovy - chvilu naň pockame
@@ -255,7 +275,7 @@ export default function Contact() {
                 aria-hidden="true"
                 className="absolute left-[-9999px] h-0 w-0 opacity-0"
               />
-              {TURNSTILE_SITE_KEY && armed && <div ref={widgetBox} />}
+              {TURNSTILE_SITE_KEY && armed && <div ref={attachWidget} />}
 
               {error && (
                 <p className="rounded-lg bg-red/10 px-3.5 py-2.5 text-sm font-semibold text-red">{error}</p>
