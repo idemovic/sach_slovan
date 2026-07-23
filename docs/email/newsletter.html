@@ -1,0 +1,112 @@
+<!-- ŠK Slovan Bratislava - šablóna newslettra / oznamu.
+     Prepíš texty v [hranatých zátvorkách]. Sekcie sa dajú kopírovať alebo mazať
+     podľa potreby. Použitie: otvor v prehliadači, Ctrl+A, Ctrl+C a vlož do
+     Gmailu (Napísať e-mail), prípadne ulož ako šablónu. Logo sa načíta z
+     https://slovan.elia.sk/slovan.png. Návod je v docs/email/README.md. -->
+<!doctype html>
+<html lang="sk">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>[Predmet e-mailu] - ŠK Slovan Bratislava</title>
+</head>
+<body style="margin:0;padding:0;background:#eef1f5;">
+
+<!-- skryty text nahľadu v schránke (preheader) -->
+<div style="display:none;max-height:0;overflow:hidden;opacity:0;">[Krátky text, ktorý sa zobrazí v náhľade doručenej pošty.]</div>
+
+<table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" style="background:#eef1f5;">
+  <tr>
+    <td align="center" style="padding:24px 12px;">
+
+      <!-- kontajner 600px -->
+      <table role="presentation" width="600" cellpadding="0" cellspacing="0" border="0" style="width:600px;max-width:100%;background:#ffffff;border-radius:14px;overflow:hidden;font-family:Arial,Helvetica,sans-serif;">
+
+        <!-- HLAVIČKA -->
+        <tr>
+          <td style="background:#0b1f44;padding:22px 28px;">
+            <table role="presentation" cellpadding="0" cellspacing="0" border="0">
+              <tr>
+                <td style="vertical-align:middle;padding-right:14px;">
+                  <img src="https://slovan.elia.sk/slovan.png" width="52" height="52" alt="ŠK Slovan Bratislava" style="display:block;border:0;width:52px;height:52px;" />
+                </td>
+                <td style="vertical-align:middle;">
+                  <div style="font-size:19px;font-weight:bold;color:#ffffff;letter-spacing:0.5px;line-height:1.15;">ŠK SLOVAN BRATISLAVA</div>
+                  <div style="font-size:12px;color:#7fb2e8;letter-spacing:1.5px;">ŠACHOVÝ KLUB</div>
+                </td>
+              </tr>
+            </table>
+          </td>
+        </tr>
+
+        <!-- TITULOK -->
+        <tr>
+          <td style="padding:32px 28px 0 28px;">
+            <div style="font-size:12px;font-weight:bold;color:#d81f2c;letter-spacing:2px;text-transform:uppercase;">[Rubrika, napr. Turnaj]</div>
+            <h1 style="margin:8px 0 0 0;font-size:26px;line-height:1.2;color:#0b1f44;">[Nadpis oznamu]</h1>
+          </td>
+        </tr>
+
+        <!-- ÚVODNÝ ODSEK -->
+        <tr>
+          <td style="padding:16px 28px 0 28px;">
+            <p style="margin:0;font-size:16px;line-height:1.6;color:#333b48;">[Úvodný odsek - o čo ide, kedy a kde. Napíš najdôležitejšie hneď na začiatku.]</p>
+          </td>
+        </tr>
+
+        <!-- SEKCIA (dá sa kopírovať pre ďalšie časti) -->
+        <tr>
+          <td style="padding:24px 28px 0 28px;">
+            <h2 style="margin:0 0 6px 0;font-size:18px;color:#0b1f44;">[Podnadpis sekcie]</h2>
+            <p style="margin:0;font-size:15px;line-height:1.6;color:#333b48;">[Text sekcie. Podrobnosti, termíny, propozície, výsledky...]</p>
+          </td>
+        </tr>
+
+        <!-- TLAČIDLO (CTA) -->
+        <tr>
+          <td style="padding:26px 28px 0 28px;">
+            <table role="presentation" cellpadding="0" cellspacing="0" border="0">
+              <tr>
+                <td align="center" bgcolor="#d81f2c" style="border-radius:8px;">
+                  <a href="[https://odkaz-kam-ma-tlacidlo-viest]" style="display:inline-block;padding:13px 26px;font-size:15px;font-weight:bold;color:#ffffff;text-decoration:none;text-transform:uppercase;letter-spacing:0.5px;" target="_blank">[Text tlačidla]</a>
+                </td>
+              </tr>
+            </table>
+          </td>
+        </tr>
+
+        <!-- ODDEĽOVAČ -->
+        <tr>
+          <td style="padding:28px 28px 0 28px;">
+            <div style="border-top:1px solid #e2e6ec;font-size:0;line-height:0;">&nbsp;</div>
+          </td>
+        </tr>
+
+        <!-- PÄTA -->
+        <tr>
+          <td style="padding:20px 28px 30px 28px;">
+            <div style="font-size:14px;font-weight:bold;color:#0b1f44;">ŠK Slovan Bratislava</div>
+            <div style="font-size:12px;color:#5b6472;line-height:1.7;padding-top:4px;">
+              Černyševského 1286/8, 851 00 Bratislava-Petržalka<br />
+              <a href="mailto:info@slovan-bratislava.com" style="color:#0f66c2;text-decoration:none;" target="_blank">info@slovan-bratislava.com</a>
+              &nbsp;&middot;&nbsp;
+              <a href="https://www.slovan-bratislava.com" style="color:#0f66c2;text-decoration:none;" target="_blank">www.slovan-bratislava.com</a>
+              &nbsp;&middot;&nbsp;
+              <a href="https://www.facebook.com/Slovanchess" style="color:#0f66c2;text-decoration:none;" target="_blank">Facebook</a>
+            </div>
+            <div style="font-size:11px;color:#95a0ad;padding-top:12px;line-height:1.6;">
+              Tento e-mail ste dostali ako člen / priaznivec ŠK Slovan Bratislava.
+              Ak si už neželáte dostávať naše správy, odpovedzte na tento e-mail so slovom „Odhlásiť“.
+            </div>
+          </td>
+        </tr>
+
+      </table>
+      <!-- /kontajner -->
+
+    </td>
+  </tr>
+</table>
+
+</body>
+</html>
